@@ -1,0 +1,346 @@
+/* NAVBAR */
+.navbar {
+  height: 65px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-up {
+  color: #333;
+  font-weight: bolder;
+}
+
+.brand-down {
+  color: #777;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.icon-navbar {
+  width: 40px;
+}
+
+/* CONTENT */
+
+.content {
+  width: 100%;
+  display: flex;
+  height: calc(100vh - 65px);
+  background-color: #fafafc;
+}
+
+/* SLIDE BAR */
+
+.slide-bar {
+  padding: 20px;
+  width: 20%;
+  background-color: #fff;
+  outline: 1px solid #0000001a;
+  overflow-x: hidden;
+}
+
+.container-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container-link {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container-link:hover {
+  opacity: 0.8;
+}
+
+.container-link.active {
+  background: #eee;
+  font-weight: bold;
+}
+
+.icon-link {
+  width: 20px;
+}
+
+.text-link {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+/* CONTAINER PATIENTS */
+
+.container-patients {
+  width: 80%;
+  margin: 20px;
+  padding: 15px;
+  background-color: #fff;
+  outline: 1px solid #0000001a;
+}
+
+/* HEAD */
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.content-title {
+  font-weight: 900;
+}
+
+.total-patients {
+  font-weight: 400;
+}
+
+.button-add-patient {
+  border: none;
+  background: #fff;
+  box-shadow: 0 0 1px #000;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 5px;
+}
+.button-add-patient:hover {
+  outline: 2px solid #888;
+}
+
+.button-add-patient img {
+  height: 14px;
+  width: 14px;
+}
+
+/* INPUT SEARCH */
+.formSearch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+}
+
+.searchBox {
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+}
+
+.input {
+  height: 30px;
+  width: 100%;
+  border: none;
+  box-shadow: 0 0 1px #000;
+  padding: 5px 35px 5px 10px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.button {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+.button img {
+  width: 100%;
+  height: 100%;
+}
+
+.input:focus {
+  outline: 1.5px solid #888;
+}
+
+/* TABLE */
+
+.container-table {
+  height: calc(100% - 40px);
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.table-patients {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.table.table-patients th,
+.table.table-patients td {
+  padding: 5px;
+}
+
+.patient-row {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button-edit,
+.button-delete {
+  border: none;
+  background: #fff;
+  box-shadow: 0 0 1px #000;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.button-edit:hover,
+.button-delete:hover {
+  outline: 2px solid #888;
+  opacity: 0.7;
+  background-color: #fafafc;
+}
+
+.button-edit img,
+.button-delete img {
+  height: 14px;
+  width: 14px;
+}
+
+/* MODAL */
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 20px 0;
+  background: #000000bb;
+  display: none;
+  pointer-events: none;
+  overflow-y: scroll;
+}
+
+.visible {
+  display: flex;
+  pointer-events: all;
+}
+
+.form-add {
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.button-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  background: transparent;
+  color: #000;
+  border: 0;
+  opacity: 0.5;
+}
+
+.button-close img {
+  width: 100%;
+}
+
+.button-close:hover {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+  background: #ddd;
+}
+
+.title-form-add {
+  font-size: 20px;
+}
+
+.presonalize-select {
+  background-image: url("../../assets/img/icons/down-icon.svg");
+}
+
+/* TOGGLE */
+.container-button-hamburger {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.container-button-hamburger:hover {
+  opacity: 0.7;
+}
+
+.icon-hamburger {
+  width: 30px;
+}
+
+.active-toggle {
+  width: 70px;
+}
+
+.active-toggle-content {
+  width: calc(100% - 70px);
+}
+
+.container-link {
+  align-items: flex-start;
+}
+
+.toggle-container-link:hover {
+  opacity: 1;
+}
+
+.toggle-container-link:hover .text-link {
+  position: absolute;
+  width: 90px;
+  z-index: 100;
+  left: 55px;
+  background-color: #fff;
+  color: #000;
+  padding: 0 10px;
+  box-shadow: 0 0 3px #00000055;
+}
+
+/* DIV CSV INVISIBLE */
+.invisible{
+  display: none;
+}

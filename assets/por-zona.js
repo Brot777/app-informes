@@ -1,0 +1,286 @@
+import {
+  Regiones,
+  colonias,
+  fuentesDeIngreso,
+  idsSubtipoDeTarea,
+  parametroZona,
+} from "../utils/consts/indices.js";
+import {
+  obtenerTodoPorFuenteDeIngreso,
+  obtenerTodoPorZona,
+} from "../utils/fetching/getEvents.js";
+import {
+  convertirFechaISOaDDMMAAAAHHMM,
+  obtenerAño,
+  obtenerDia,
+  obtenerMes,
+} from "../utils/fuctions/date.js";
+import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
+import { escapeNewlines } from "./fuctionsPorZona.js";
+
+/* VARIABLES GENERALES */
+let dataGeneral = [];
+
+/* CARGA PAGINA */
+document.addEventListener("DOMContentLoaded", async () => {
+  // Obtener la hora actual en formato ISO
+  const fechaActualISO = new Date().toISOString();
+  // Obtener la hora de hoy a las 00:00 horas en formato ISO
+  const hoyMedianoche = new Date();
+  hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
+  const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
+
+  const eventosPorZona = await obtenerTodoPorZona(
+    fechaInicioDeHoyISO,
+    fechaActualISO
+  );
+
+  const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
+    fechaInicioDeHoyISO,
+    fechaActualISO
+  );
+
+  const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
+
+  const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
+    eventosZona.map((evento) => {
+      let fuenteDeIngreso = "";
+      eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
+        const eventoFind = eventosFuente.find(
+          (eventoF) => eventoF.id == evento.id
+        );
+        eventoFind && (fuenteDeIngreso = arrayNombresFuenteDeIngreso[i]);
+      });
+
+      return {
+        ...evento,
+        fuenteDeIngreso: fuenteDeIngreso
+          ? fuenteDeIngreso
+          : "Alcaldia Auxiliar",
+      };
+    })
+  );
+
+  pintarEventosPorZona(eventosPorZonaConFuente);
+});
+
+/* RENDERIZADO DE ZONAS */
+export const pintarEventosPorZona = (eventosPorZona) => {
+  const $containerTables = document.getElementById("container-tables");
+  $containerTables.innerHTML = "";
+  const arrayNombreZonas = Object.values(parametroZona);
+  const dataExportar = [];
+  eventosPorZona.forEach((eventosZona, i) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const titleCard = document.createElement("h5");
+    titleCard.classList.add("alert", "alert-primary");
+    titleCard.innerText = arrayNombreZonas[i];
+    if (eventosZona.length == 0) {
+      return;
+    }
+    cardBody.appendChild(titleCard);
+
+    const tableZone = document.createElement("table");
+    tableZone.classList.add("table", "table-hover", "table-patients");
+    tableZone.innerHTML = ` <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Tipo de Evento</th>
+      <th scope="col">Tipo falta de Agua</th>
+      <th scope="col" colspan="2">Descripcion</th>
+      <th scope="col">Zona</th>
+      <th scope="col">Colonia</th>
+      <th scope="col">Fuente de Ingreso</th>
+      <th scope="col">Fecha Creó</th>
+      <th scope="col">Dia</th>
+      <th scope="col">Mes</th>
+      <th scope="col">Region</th>
+      <th scope="col">Año</th>
+    </tr>
+  </thead>`;
+    const tbody = document.createElement("tbody");
+    tbody.setAttribute("id", "tbody-events");
+    eventosZona.forEach((task, j) => {
+      const tr = document.createElement("tr");
+      tr.classList.add("table-secondary");
+      tr.classList.add("patient-row");
+      tr.setAttribute("data-id", task.id);
+      tr.innerHTML = `
+    <td>${task.id}</td>
+    <td>Falta de Agua</td>
+    <td>${idsSubtipoDeTarea[task.taskSubType.toString()]}</td>
+    <td colspan="2">${task.description}</td>
+    <td>${
+      arrayNombreZonas[i] != "ZONA 12"
+        ? arrayNombreZonas[i]
+        : ["MEZQUITAL", "VILLA LOBOS 1", "CIUDAD REAL"].includes(
+            encontrarColoniaEnDescripcion(
+              colonias[arrayNombreZonas[i]],
+              task.description
+            )
+          )
+        ? "VILLA NUEVA"
+        : "ZONA 12"
+    }</td>
+    <td>${encontrarColoniaEnDescripcion(
+      colonias[arrayNombreZonas[i]],
+      task.description
+    )}</td>
+    <td>${task.fuenteDeIngreso}</td>
+    <td>${convertirFechaISOaDDMMAAAAHHMM(task.createdAt)}</td>
+    <td>${obtenerDia(task.createdAt)}</td>
+    <td>${obtenerMes(task.createdAt)}</td>
+    <td>${Regiones[arrayNombreZonas[i]]}</td>
+    <td>${obtenerAño(task.createdAt)}</td>
+    `;
+      tbody.appendChild(tr);
+
+      dataExportar.push({
+        Id: task.id,
+        "Tipo de Evento": "Falta de Agua",
+        "Tipo falta de Agua": idsSubtipoDeTarea[task.taskSubType.toString()],
+        Descripcion: task.description,
+        Zona: arrayNombreZonas[i],
+        Colonia: encontrarColoniaEnDescripcion(
+          colonias[arrayNombreZonas[i]],
+          task.description
+        ),
+        "Fuente de Ingreso": task.fuenteDeIngreso,
+        Fecha: convertirFechaISOaDDMMAAAAHHMM(task.createdAt),
+        Dia: obtenerDia(task.createdAt),
+        Mes: obtenerMes(task.createdAt),
+        Region: Regiones[arrayNombreZonas[i]],
+        Año: obtenerAño(task.createdAt),
+      });
+    });
+    tableZone.appendChild(tbody);
+    cardBody.appendChild(tableZone);
+    card.appendChild(cardBody);
+    $containerTables.appendChild(card);
+  });
+  dataGeneral = dataExportar;
+};
+
+/* INPUTS TIPE DATE-TIME-LOCAL */
+const horaInicioPorZona = document.getElementById("horaInicioPorZona");
+const horaFinalPorZona = document.getElementById("horaFinalPorZona");
+
+horaInicioPorZona.addEventListener("change", async (e) => {
+  // Obtener la hora actual en formato ISO
+  const fechaActualISO = new Date().toISOString();
+  // Obtener la hora de hoy a las 00:00 horas en formato ISO
+  const hoyMedianoche = new Date();
+  hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
+  const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
+
+  const horaInicio = horaInicioPorZona.value || fechaInicioDeHoyISO;
+  const horaFin = horaFinalPorZona.value || fechaActualISO;
+
+  const horaInicioIso = new Date(horaInicio).toISOString();
+  const horaFinIso = new Date(horaFin).toISOString();
+
+  const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
+
+  const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
+    fechaInicioDeHoyISO,
+    fechaActualISO
+  );
+
+  const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
+
+  const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
+    eventosZona.map((evento) => {
+      let fuenteDeIngreso = "";
+      eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
+        const eventoFind = eventosFuente.find(
+          (eventoF) => eventoF.id == evento.id
+        );
+        eventoFind && (fuenteDeIngreso = arrayNombresFuenteDeIngreso[i]);
+      });
+
+      return {
+        ...evento,
+        fuenteDeIngreso: fuenteDeIngreso
+          ? fuenteDeIngreso
+          : "Alcaldia Auxiliar",
+      };
+    })
+  );
+
+  pintarEventosPorZona(eventosPorZonaConFuente);
+});
+
+horaFinalPorZona.addEventListener("change", async (e) => {
+  // Obtener la hora actual en formato ISO
+  const fechaActualISO = new Date().toISOString();
+  // Obtener la hora de hoy a las 00:00 horas en formato ISO
+  const hoyMedianoche = new Date();
+  hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
+  const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
+
+  const horaInicio = horaInicioPorZona.value || fechaInicioDeHoyISO;
+  const horaFin = horaFinalPorZona.value || fechaActualISO;
+
+  const horaInicioIso = new Date(horaInicio).toISOString();
+  const horaFinIso = new Date(horaFin).toISOString();
+
+  const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
+
+  const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
+    fechaInicioDeHoyISO,
+    fechaActualISO
+  );
+
+  const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
+
+  const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
+    eventosZona.map((evento) => {
+      let fuenteDeIngreso = "";
+      eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
+        const eventoFind = eventosFuente.find(
+          (eventoF) => eventoF.id == evento.id
+        );
+        eventoFind && (fuenteDeIngreso = arrayNombresFuenteDeIngreso[i]);
+      });
+
+      return {
+        ...evento,
+        fuenteDeIngreso: fuenteDeIngreso
+          ? fuenteDeIngreso
+          : "Alcaldia Auxiliar",
+      };
+    })
+  );
+
+  pintarEventosPorZona(eventosPorZonaConFuente);
+});
+
+/* BOTON DESCARGAR CSV */
+const buttonDescargarPorZona = document.getElementById(
+  "button-descargar-por-zona"
+);
+buttonDescargarPorZona.addEventListener("click", (e) => {
+  // Escapar los saltos de línea en los valores de los campos
+  dataGeneral.forEach((item) => {
+    for (const key in item) {
+      if (item.hasOwnProperty(key)) {
+        item[key] = escapeNewlines(item[key]);
+      }
+    }
+  });
+
+  const csv = Papa.unparse(dataGeneral);
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const downloadLink = document.createElement("a");
+  downloadLink.href = url;
+  downloadLink.setAttribute("download", "data.csv");
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+});
