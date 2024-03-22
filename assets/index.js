@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     fechaActualISO
   );
   const arrayNombreZonas = Object.values(parametroZona);
+
   let eventosTotales = [];
   eventosPorZona.forEach((eventosZona, i) => {
     const newEventosZona = eventosZona.map((evento) => {

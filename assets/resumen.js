@@ -1,5 +1,6 @@
-import { parametroZona } from "../utils/consts/indices.js";
+import { colonias, parametroZona } from "../utils/consts/indices.js";
 import { obtenerTodoPorZona } from "../utils/fetching/getEvents.js";
+import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
 
 /* CARGA PAGINA */
 document.addEventListener("DOMContentLoaded", async () => {
@@ -14,6 +15,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     fechaInicioDeHoyISO,
     fechaActualISO
   );
+
+  /* AGREGANDO ZONA VILLA NUEVA */
+  const eventosVillaNueva = [];
+  const eventosSinVillaNueva = [];
+  eventosPorZona[11].forEach((evento) => {
+    ["MEZQUITAL", "VILLA LOBOS 1", "CIUDAD REAL"].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
+    )
+      ? eventosVillaNueva.push(evento)
+      : eventosSinVillaNueva.push(evento);
+  }); // ZONA 12
+  eventosPorZona[11] = eventosSinVillaNueva;
+  eventosPorZona.push(eventosVillaNueva);
+  /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarConteoPorZona(eventosPorZona);
 });
@@ -33,6 +48,7 @@ export const pintarConteoPorZona = (eventosPorZona) => {
   const tbody = document.createElement("tbody");
   tbody.setAttribute("id", "tbody-events");
   const arrayNombreZonas = Object.values(parametroZona);
+  arrayNombreZonas.push("VILLA NUEVA");
   let contadorFaltasTotales = 0;
   eventosPorZona.forEach((evento, i) => {
     const tr = document.createElement("tr");
@@ -77,10 +93,21 @@ horaInicioResumen.addEventListener("change", async (e) => {
   const horaInicioIso = new Date(horaInicio).toISOString();
   const horaFinIso = new Date(horaFin).toISOString();
 
-  console.log(horaInicioIso, horaFinIso);
-
   const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
-  console.log(eventosPorZona);
+
+  /* AGREGANDO ZONA VILLA NUEVA */
+  const eventosVillaNueva = [];
+  const eventosSinVillaNueva = [];
+  eventosPorZona[11].forEach((evento) => {
+    ["MEZQUITAL", "VILLA LOBOS 1", "CIUDAD REAL"].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
+    )
+      ? eventosVillaNueva.push(evento)
+      : eventosSinVillaNueva.push(evento);
+  }); // ZONA 12
+  eventosPorZona[11] = eventosSinVillaNueva;
+  eventosPorZona.push(eventosVillaNueva);
+  /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarConteoPorZona(eventosPorZona);
 });
@@ -100,7 +127,20 @@ horaFinalResumen.addEventListener("change", async (e) => {
   const horaFinIso = new Date(horaFin).toISOString();
 
   const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
-  console.log(eventosPorZona);
+
+  /* AGREGANDO ZONA VILLA NUEVA */
+  const eventosVillaNueva = [];
+  const eventosSinVillaNueva = [];
+  eventosPorZona[11].forEach((evento) => {
+    ["MEZQUITAL", "VILLA LOBOS 1", "CIUDAD REAL"].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
+    )
+      ? eventosVillaNueva.push(evento)
+      : eventosSinVillaNueva.push(evento);
+  }); // ZONA 12
+  eventosPorZona[11] = eventosSinVillaNueva;
+  eventosPorZona.push(eventosVillaNueva);
+  /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarConteoPorZona(eventosPorZona);
 });

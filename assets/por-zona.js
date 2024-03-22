@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     fechaActualISO
   );
 
+  /* AGREGANDO FUENTE DE INGRESO */
   const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
     fechaInicioDeHoyISO,
     fechaActualISO
@@ -60,6 +61,39 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
     })
   );
+  /* FIN AGREGANDO FUENTE DE INGRESO */
+
+  /* AGREGANDO ZONA VILLA NUEVA */
+  const eventosVillaNueva = [];
+  const eventosSinVillaNueva = [];
+  eventosPorZonaConFuente[11].forEach((evento) => {
+    [
+      "ANEXO 3 CIUDAD REAL",
+      "ANEXO 3 CIUDAD REAL II",
+      "ANEXO VILLALOBOS I",
+      "ANEXO VILLALOBOS II",
+      "ASENTAMIENTO UNIDOS POR PAZ",
+      "CIUDAD REAL",
+      "CIUDAD REAL I",
+      "CIUDAD REAL II",
+      "MEZQUITAL",
+      "MONTEMARIA",
+      "MONTEMARIA I",
+      "MONTEMARIA II",
+      "MONTEMARIA III",
+      "PORVENIR",
+      "VILLA LOBOS",
+      "VILLA LOBOS 1",
+      "VILLA LOBOS 2",
+    ].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
+    )
+      ? eventosVillaNueva.push(evento)
+      : eventosSinVillaNueva.push(evento);
+  }); // ZONA 12
+  eventosPorZonaConFuente[11] = eventosSinVillaNueva;
+  eventosPorZonaConFuente.push(eventosVillaNueva);
+  /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarEventosPorZona(eventosPorZonaConFuente);
 });
@@ -69,6 +103,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
   const $containerTables = document.getElementById("container-tables");
   $containerTables.innerHTML = "";
   const arrayNombreZonas = Object.values(parametroZona);
+  arrayNombreZonas.push("VILLA NUEVA");
   const dataExportar = [];
   eventosPorZona.forEach((eventosZona, i) => {
     const card = document.createElement("div");
@@ -87,6 +122,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
     const tableZone = document.createElement("table");
     tableZone.classList.add("table", "table-hover", "table-patients");
+
     tableZone.innerHTML = ` <thead>
     <tr>
       <th scope="col">Id</th>
@@ -106,6 +142,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     const tbody = document.createElement("tbody");
     tbody.setAttribute("id", "tbody-events");
     eventosZona.forEach((task, j) => {
+      console.log(Regiones[arrayNombreZonas[i]], arrayNombreZonas[i]);
       const tr = document.createElement("tr");
       tr.classList.add("table-secondary");
       tr.classList.add("patient-row");
@@ -115,18 +152,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     <td>Falta de Agua</td>
     <td>${idsSubtipoDeTarea[task.taskSubType.toString()]}</td>
     <td colspan="2">${task.description}</td>
-    <td>${
-      arrayNombreZonas[i] != "ZONA 12"
-        ? arrayNombreZonas[i]
-        : ["MEZQUITAL", "VILLA LOBOS 1", "CIUDAD REAL"].includes(
-            encontrarColoniaEnDescripcion(
-              colonias[arrayNombreZonas[i]],
-              task.description
-            )
-          )
-        ? "VILLA NUEVA"
-        : "ZONA 12"
-    }</td>
+    <td>${arrayNombreZonas[i]}</td>
     <td>${encontrarColoniaEnDescripcion(
       colonias[arrayNombreZonas[i]],
       task.description
@@ -212,6 +238,38 @@ horaInicioPorZona.addEventListener("change", async (e) => {
     })
   );
 
+  /* AGREGANDO ZONA VILLA NUEVA */
+  const eventosVillaNueva = [];
+  const eventosSinVillaNueva = [];
+  eventosPorZonaConFuente[11].forEach((evento) => {
+    [
+      "ANEXO 3 CIUDAD REAL",
+      "ANEXO 3 CIUDAD REAL II",
+      "ANEXO VILLALOBOS I",
+      "ANEXO VILLALOBOS II",
+      "ASENTAMIENTO UNIDOS POR PAZ",
+      "CIUDAD REAL",
+      "CIUDAD REAL I",
+      "CIUDAD REAL II",
+      "MEZQUITAL",
+      "MONTEMARIA",
+      "MONTEMARIA I",
+      "MONTEMARIA II",
+      "MONTEMARIA III",
+      "PORVENIR",
+      "VILLA LOBOS",
+      "VILLA LOBOS 1",
+      "VILLA LOBOS 2",
+    ].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
+    )
+      ? eventosVillaNueva.push(evento)
+      : eventosSinVillaNueva.push(evento);
+  }); // ZONA 12
+  eventosPorZonaConFuente[11] = eventosSinVillaNueva;
+  eventosPorZonaConFuente.push(eventosVillaNueva);
+  /* FIN AGREGANDO ZONA VILLA NUEVA */
+
   pintarEventosPorZona(eventosPorZonaConFuente);
 });
 
@@ -256,6 +314,38 @@ horaFinalPorZona.addEventListener("change", async (e) => {
       };
     })
   );
+
+  /* AGREGANDO ZONA VILLA NUEVA */
+  const eventosVillaNueva = [];
+  const eventosSinVillaNueva = [];
+  eventosPorZonaConFuente[11].forEach((evento) => {
+    [
+      "ANEXO 3 CIUDAD REAL",
+      "ANEXO 3 CIUDAD REAL II",
+      "ANEXO VILLALOBOS I",
+      "ANEXO VILLALOBOS II",
+      "ASENTAMIENTO UNIDOS POR PAZ",
+      "CIUDAD REAL",
+      "CIUDAD REAL I",
+      "CIUDAD REAL II",
+      "MEZQUITAL",
+      "MONTEMARIA",
+      "MONTEMARIA I",
+      "MONTEMARIA II",
+      "MONTEMARIA III",
+      "PORVENIR",
+      "VILLA LOBOS",
+      "VILLA LOBOS 1",
+      "VILLA LOBOS 2",
+    ].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
+    )
+      ? eventosVillaNueva.push(evento)
+      : eventosSinVillaNueva.push(evento);
+  }); // ZONA 12
+  eventosPorZonaConFuente[11] = eventosSinVillaNueva;
+  eventosPorZonaConFuente.push(eventosVillaNueva);
+  /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarEventosPorZona(eventosPorZonaConFuente);
 });
