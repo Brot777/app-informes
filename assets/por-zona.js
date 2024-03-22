@@ -96,18 +96,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarEventosPorZona(eventosPorZonaConFuente);
-  html2canvas(document.body, {
-    width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
-    height: document.body.scrollHeight, // Capturar toda la altura del contenido
-  }).then(function (canvas) {
-    // Convertir la captura en un archivo PDF
-    var imgData = canvas.toDataURL("image/png");
-    var pdf = new jsPDF("p", "pt", [canvas.width, canvas.height]);
-    pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
-
-    // Descargar el archivo PDF
-    pdf.save("captura.pdf");
-  });
 });
 
 /* RENDERIZADO DE ZONAS */
@@ -387,3 +375,18 @@ buttonDescargarPorZona.addEventListener("click", (e) => {
 });
 
 /* CACPTURAR PANTALLA */
+document.getElementById("convertButton").addEventListener("click", (e) => {
+  console.log("hola");
+  html2canvas(document.body, {
+    width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
+    height: document.body.scrollHeight, // Capturar toda la altura del contenido
+  }).then(function (canvas) {
+    // Convertir la captura en un archivo PDF
+    var imgData = canvas.toDataURL("image/png");
+    var pdf = new jsPDF("p", "pt", [canvas.width, canvas.height]);
+    pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
+
+    // Descargar el archivo PDF
+    pdf.save("captura.pdf");
+  });
+});
