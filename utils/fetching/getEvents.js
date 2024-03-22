@@ -21,7 +21,6 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
     response.json()
   );
   const arrayEventosData = await Promise.all(arrayPromisesEventos);
-  console.log(horaInicio, horaFinal);
 
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
@@ -57,7 +56,6 @@ export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
     response.json()
   );
   const arrayEventosData = await Promise.all(arrayPromisesEventos);
-  console.log(horaInicio, horaFinal);
 
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);

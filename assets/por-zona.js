@@ -96,6 +96,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarEventosPorZona(eventosPorZonaConFuente);
+  html2canvas(document.body, {
+    width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
+    height: document.body.scrollHeight, // Capturar toda la altura del contenido
+  }).then(function (canvas) {
+    // Convertir la captura en un archivo PDF
+    var imgData = canvas.toDataURL("image/png");
+    var pdf = new jsPDF("p", "pt", [canvas.width, canvas.height]);
+    pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
+
+    // Descargar el archivo PDF
+    pdf.save("captura.pdf");
+  });
 });
 
 /* RENDERIZADO DE ZONAS */
@@ -142,7 +154,6 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     const tbody = document.createElement("tbody");
     tbody.setAttribute("id", "tbody-events");
     eventosZona.forEach((task, j) => {
-      console.log(Regiones[arrayNombreZonas[i]], arrayNombreZonas[i]);
       const tr = document.createElement("tr");
       tr.classList.add("table-secondary");
       tr.classList.add("patient-row");
@@ -374,3 +385,5 @@ buttonDescargarPorZona.addEventListener("click", (e) => {
   downloadLink.click();
   document.body.removeChild(downloadLink);
 });
+
+/* CACPTURAR PANTALLA */
