@@ -10,7 +10,6 @@ import {
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
-import { formatEventsTableAll } from "./fuctionsIndex.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Obtener la hora actual en formato ISO

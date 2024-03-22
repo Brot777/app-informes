@@ -14,7 +14,13 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">DARED</a>
+        <a class="navbar-brand brand" href="/">
+          <img
+            src="./assets/img/logo.jpg"
+            alt="logo empagua"
+            class="icon-navbar"
+          />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,24 +48,27 @@
       </div>
     </nav>
     <!-- INPUTS TIPE DATE-TIME-LOCAL -->
-    <div class="d-flex justify-content-end mt-3">
-      <div class="mx-2">
-        <label for="horaInicioTodas" class="form-label">Inicio</label>
-        <input
-          type="datetime-local"
-          class="form-control me-2"
-          id="horaInicioTodas"
-        />
-      </div>
-      <div class="mx-2">
-        <label for="horaFinalTodas" class="form-label">Final</label>
-        <input
-          type="datetime-local"
-          class="form-control me-2"
-          id="horaFinalTodas"
-        />
+    <div class="card mt-3">
+      <div class="mt-3 row d-flex justify-content-end card-body">
+        <div class="mx-2 col-md-3">
+          <label for="horaInicioTodas" class="form-label">Inicio</label>
+          <input
+            type="datetime-local"
+            class="form-control me-2"
+            id="horaInicioTodas"
+          />
+        </div>
+        <div class="mx-2 col-md-3">
+          <label for="horaFinalTodas" class="form-label">Final</label>
+          <input
+            type="datetime-local"
+            class="form-control me-2"
+            id="horaFinalTodas"
+          />
+        </div>
       </div>
     </div>
+
     <div class="card mt-3">
       <div class="container-table card-body" id="scroll-container">
         <table
