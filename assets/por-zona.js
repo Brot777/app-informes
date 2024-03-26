@@ -375,18 +375,61 @@ buttonDescargarPorZona.addEventListener("click", (e) => {
 });
 
 /* CACPTURAR PANTALLA */
-document.getElementById("convertButton").addEventListener("click", (e) => {
-  console.log("hola");
-  html2canvas(document.body, {
+document.getElementById("convertButton").addEventListener("click", async (e) => {
+
+ /*  html2canvas(document.getElementById("container-tables"), {
     width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
     height: document.body.scrollHeight, // Capturar toda la altura del contenido
   }).then(function (canvas) {
     // Convertir la captura en un archivo PDF
-    var imgData = canvas.toDataURL("image/png");
+    var imgData = canvas.toDataURL("image/png",0.7);
     var pdf = new jsPDF("p", "pt", [canvas.width, canvas.height]);
     pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
 
     // Descargar el archivo PDF
     pdf.save("captura.pdf");
-  });
+  }); */
+
+    // Capturar el contenido del elemento específico
+    const canvas = await html2canvas(document.getElementById("container-tables"), {
+      width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
+      height: document.body.scrollHeight, // Capturar toda la altura del contenido
+    });
+
+    // Convertir la captura en un archivo PDF
+    const pdfDoc = await PDFLib.PDFDocument.create();
+    const pages = [];
+
+    // Dividir el contenido en páginas si excede el límite de tamaño de página de jsPDF
+    const MAX_PAGE_HEIGHT = 14400;
+    const totalHeight = canvas.height;
+    let y = 0;
+
+    while (y < totalHeight) {
+        const pageHeight = Math.min(totalHeight - y, MAX_PAGE_HEIGHT);
+        const newCanvas = document.createElement('canvas');
+        newCanvas.width = canvas.width;
+        newCanvas.height = pageHeight;
+        const context = newCanvas.getContext('2d');
+        context.drawImage(canvas, 0, y, canvas.width, pageHeight, 0, 0, canvas.width, pageHeight);
+        const pngData = newCanvas.toDataURL('image/png');
+        const pngImage = await pdfDoc.embedPng(pngData);
+        const page = pdfDoc.addPage([canvas.width, pageHeight]);
+        page.drawImage(pngImage, { x: 0, y: 0, width: canvas.width, height: pageHeight });
+        pages.push(page);
+        y += pageHeight;
+    }
+
+    // Guardar el archivo PDF
+    const pdfBytes = await pdfDoc.save();
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'captura_elemento.pdf';
+    link.click();
+
+
+
+
+
 });
