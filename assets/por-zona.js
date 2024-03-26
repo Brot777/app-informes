@@ -21,6 +21,16 @@ import { escapeNewlines } from "./fuctionsPorZona.js";
 /* VARIABLES GENERALES */
 let dataGeneral = [];
 
+const addEventDeleted = () => {
+  let $trZones = document.querySelectorAll(".patient-row");
+  $trZones.forEach((tr) => {
+    tr.addEventListener("click", async (e) => {
+      tr.classList.toggle("table-danger")
+      tr.classList.toggle("table-secondary")
+    });
+  });
+};
+
 /* CARGA PAGINA */
 document.addEventListener("DOMContentLoaded", async () => {
   // Obtener la hora actual en formato ISO
@@ -112,8 +122,8 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
 
-    const titleCard = document.createElement("h5");
-    titleCard.classList.add("alert", "alert-primary");
+    const titleCard = document.createElement("div");
+    titleCard.classList.add("badge", "bg-dark","w-100","py-2");
     titleCard.innerText = arrayNombreZonas[i];
     if (eventosZona.length == 0) {
       return;
@@ -146,6 +156,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
       tr.classList.add("table-secondary");
       tr.classList.add("patient-row");
       tr.setAttribute("data-id", task.id);
+      tr.setAttribute("id", task.id);
       tr.innerHTML = `
     <td>${task.id}</td>
     <td>Falta de Agua</td>
@@ -188,6 +199,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     card.appendChild(cardBody);
     $containerTables.appendChild(card);
   });
+  addEventDeleted()
   dataGeneral = dataExportar;
 };
 
