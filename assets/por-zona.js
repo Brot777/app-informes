@@ -394,7 +394,6 @@ document.getElementById("convertButton").addEventListener("click", async (e) => 
     const canvas = await html2canvas(document.getElementById("container-tables"), {
       width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
       height: document.body.scrollHeight, // Capturar toda la altura del contenido
-      scale:window.devicePixelRatio>1?2:1,// Escala dependiendo del dispositivo
     });
 
     // Convertir la captura en un archivo PDF
