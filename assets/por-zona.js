@@ -11,25 +11,18 @@ import {
 } from "../utils/fetching/getEvents.js";
 import {
   convertirFechaISOaDDMMAAAAHHMM,
+  convertirFechaISOaHoraFecha,
   obtenerAño,
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
 import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
-import { escapeNewlines } from "./fuctionsPorZona.js";
+import { addEventMarker, escapeNewlines } from "./fuctionsPorZona.js";
 
 /* VARIABLES GENERALES */
 let dataGeneral = [];
 
-const addEventDeleted = () => {
-  let $trZones = document.querySelectorAll(".patient-row");
-  $trZones.forEach((tr) => {
-    tr.addEventListener("click", async (e) => {
-      tr.classList.toggle("table-danger")
-      tr.classList.toggle("table-secondary")
-    });
-  });
-};
+
 
 /* CARGA PAGINA */
 document.addEventListener("DOMContentLoaded", async () => {
@@ -199,7 +192,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     card.appendChild(cardBody);
     $containerTables.appendChild(card);
   });
-  addEventDeleted()
+  addEventMarker()
   dataGeneral = dataExportar;
 };
 
@@ -389,19 +382,6 @@ buttonDescargarPorZona.addEventListener("click", (e) => {
 /* CACPTURAR PANTALLA */
 document.getElementById("convertButton").addEventListener("click", async (e) => {
 
- /*  html2canvas(document.getElementById("container-tables"), {
-    width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
-    height: document.body.scrollHeight, // Capturar toda la altura del contenido
-  }).then(function (canvas) {
-    // Convertir la captura en un archivo PDF
-    var imgData = canvas.toDataURL("image/png",0.7);
-    var pdf = new jsPDF("p", "pt", [canvas.width, canvas.height]);
-    pdf.addImage(imgData, 0, 0, canvas.width, canvas.height);
-
-    // Descargar el archivo PDF
-    pdf.save("captura.pdf");
-  }); */
-
     // Capturar el contenido del elemento específico
     const canvas = await html2canvas(document.getElementById("container-tables"), {
       width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
@@ -438,7 +418,7 @@ document.getElementById("convertButton").addEventListener("click", async (e) => 
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.download = 'captura_elemento.pdf';
+    link.download = `reporte_falta_de_agua-${convertirFechaISOaHoraFecha(new Date())}.pdf`;
     link.click();
 
 
