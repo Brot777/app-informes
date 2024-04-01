@@ -736,7 +736,7 @@ export const colonias = {
     "SAN AGUSTÍN": ["SAN AGUSTÍN"],
     "SANTA ANITA": ["SANTA ANITA"],
     "VIRGEN DE LA MONTAÑA": ["VIRGEN DE LA MONTAÑA", "DE LA MONTAÑA"],
-    "Hermano Pedro": ["Hermano Pedro"],
+    "HERMANO PEDRO": ["Hermano Pedro"],
   },
   CHINAUTLA: {
     "SANTA LUISA": ["SANTA LUISA"],
