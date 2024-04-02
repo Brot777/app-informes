@@ -22,8 +22,6 @@ import { addEventMarker, escapeNewlines } from "./fuctionsPorZona.js";
 /* VARIABLES GENERALES */
 let dataGeneral = [];
 
-
-
 /* CARGA PAGINA */
 document.addEventListener("DOMContentLoaded", async () => {
   // Obtener la hora actual en formato ISO
@@ -116,7 +114,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     cardBody.classList.add("card-body");
 
     const titleCard = document.createElement("div");
-    titleCard.classList.add("badge", "bg-dark","w-100","py-2");
+    titleCard.classList.add("badge", "bg-dark", "w-100", "py-2");
     titleCard.innerText = arrayNombreZonas[i];
     if (eventosZona.length == 0) {
       return;
@@ -192,7 +190,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     card.appendChild(cardBody);
     $containerTables.appendChild(card);
   });
-  addEventMarker()
+  addEventMarker();
   dataGeneral = dataExportar;
 };
 
@@ -380,14 +378,18 @@ buttonDescargarPorZona.addEventListener("click", (e) => {
 });
 
 /* CACPTURAR PANTALLA */
-document.getElementById("convertButton").addEventListener("click", async (e) => {
-
+document
+  .getElementById("convertButton")
+  .addEventListener("click", async (e) => {
     // Capturar el contenido del elemento específico
-    const canvas = await html2canvas(document.getElementById("container-tables"), {
-      width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
-      height: document.body.scrollHeight, // Capturar toda la altura del contenido
-      scale:window.devicePixelRatio>1?2:1,// Escala dependiendo del dispositivo
-    });
+    const canvas = await html2canvas(
+      document.getElementById("container-tables"),
+      {
+        width: document.documentElement.scrollWidth, // Ajustar el ancho de captura al ancho total del documento
+        height: document.body.scrollHeight, // Capturar toda la altura del contenido
+        scale: window.devicePixelRatio > 1 ? 2 : 1, // Escala dependiendo del dispositivo
+      }
+    );
 
     // Convertir la captura en un archivo PDF
     const pdfDoc = await PDFLib.PDFDocument.create();
@@ -399,30 +401,42 @@ document.getElementById("convertButton").addEventListener("click", async (e) => 
     let y = 0;
 
     while (y < totalHeight) {
-        const pageHeight = Math.min(totalHeight - y, MAX_PAGE_HEIGHT);
-        const newCanvas = document.createElement('canvas');
-        newCanvas.width = canvas.width;
-        newCanvas.height = pageHeight;
-        const context = newCanvas.getContext('2d');
-        context.drawImage(canvas, 0, y, canvas.width, pageHeight, 0, 0, canvas.width, pageHeight);
-        const pngData = newCanvas.toDataURL('image/png');
-        const pngImage = await pdfDoc.embedPng(pngData);
-        const page = pdfDoc.addPage([canvas.width, pageHeight]);
-        page.drawImage(pngImage, { x: 0, y: 0, width: canvas.width, height: pageHeight });
-        pages.push(page);
-        y += pageHeight;
+      const pageHeight = Math.min(totalHeight - y, MAX_PAGE_HEIGHT);
+      const newCanvas = document.createElement("canvas");
+      newCanvas.width = canvas.width;
+      newCanvas.height = pageHeight;
+      const context = newCanvas.getContext("2d");
+      context.drawImage(
+        canvas,
+        0,
+        y,
+        canvas.width,
+        pageHeight,
+        0,
+        0,
+        canvas.width,
+        pageHeight
+      );
+      const pngData = newCanvas.toDataURL("image/png");
+      const pngImage = await pdfDoc.embedPng(pngData);
+      const page = pdfDoc.addPage([canvas.width, pageHeight]);
+      page.drawImage(pngImage, {
+        x: 0,
+        y: 0,
+        width: canvas.width,
+        height: pageHeight,
+      });
+      pages.push(page);
+      y += pageHeight;
     }
 
     // Guardar el archivo PDF
     const pdfBytes = await pdfDoc.save();
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-    const link = document.createElement('a');
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+    const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = `reporte_falta_de_agua-${convertirFechaISOaHoraFecha(new Date())}.pdf`;
+    link.download = `reporte_falta_de_agua-${convertirFechaISOaHoraFecha(
+      new Date()
+    )}.pdf`;
     link.click();
-
-
-
-
-
-});
+  });

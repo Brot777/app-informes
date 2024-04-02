@@ -2,6 +2,10 @@ import { colonias, parametroZona } from "../utils/consts/indices.js";
 import { obtenerTodoPorZona } from "../utils/fetching/getEvents.js";
 import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
 
+/* VARIABLES GLOBALES */
+
+let chart;
+
 /* CARGA PAGINA */
 document.addEventListener("DOMContentLoaded", async () => {
   // Obtener la hora actual en formato ISO
@@ -31,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarConteoPorZona(eventosPorZona);
+  renderizarGrafica(eventosPorZona);
 });
 
 /* RENDERIZADO DE ZONAS */
@@ -75,6 +80,37 @@ export const pintarConteoPorZona = (eventosPorZona) => {
   tableConteo.appendChild(tbody);
 };
 
+export const renderizarGrafica = (eventosPorZona) => {
+  const arrayNombreZonas = Object.values(parametroZona);
+  arrayNombreZonas.push("VILLA NUEVA");
+
+  const faltas = eventosPorZona.map((evento, i) => evento.length);
+
+  var ctx = document.getElementById("chartFaltasPorZona").getContext("2d");
+  if (chart) {
+    chart.destroy();
+  }
+  chart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: arrayNombreZonas,
+      datasets: [
+        {
+          label: "Last year",
+          backgroundColor: "#3B7DDD",
+          data: faltas,
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false,
+      },
+    },
+  });
+};
+
 /* INPUTS TIPE DATE-TIME-LOCAL */
 const horaInicioResumen = document.getElementById("horaInicioResumen");
 const horaFinalResumen = document.getElementById("horaFinalResumen");
@@ -110,6 +146,7 @@ horaInicioResumen.addEventListener("change", async (e) => {
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarConteoPorZona(eventosPorZona);
+  renderizarGrafica(eventosPorZona);
 });
 
 horaFinalResumen.addEventListener("change", async (e) => {
@@ -143,4 +180,5 @@ horaFinalResumen.addEventListener("change", async (e) => {
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
   pintarConteoPorZona(eventosPorZona);
+  renderizarGrafica(eventosPorZona);
 });
