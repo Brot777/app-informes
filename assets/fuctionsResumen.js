@@ -125,7 +125,13 @@ export const actualizarGrafica = async () => {
   const eventosChinautla = [];
   const eventosSinChinautla = [];
   eventosPorZona[5].forEach((evento) => {
-    ["SANTA LUISA", "SANTA FAZ", "SAN JULIAN", "SAUZALITO"].includes(
+    [
+      "SANTA LUISA",
+      "SANTA FAZ",
+      "SAN JULIAN",
+      "SANTA MARTA",
+      "SAUZALITO",
+    ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
       ? eventosChinautla.push(evento)
