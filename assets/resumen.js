@@ -1,3 +1,4 @@
+import { colonias } from "../utils/consts/indices.js";
 import { obtenerTodoPorZona } from "../utils/fetching/getEvents.js";
 import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
 import {
