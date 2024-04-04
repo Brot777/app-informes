@@ -96,6 +96,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   eventosPorZonaConFuente.push(eventosVillaNueva);
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
+  /* REASIGNANDO CHINAUTLA */
+  const eventosChinautla = [];
+  const eventosSinChinautla = [];
+  eventosPorZonaConFuente[5].forEach((evento) => {
+    ["SANTA LUISA", "SANTA FAZ", "SAN JULIAN", "SAUZALITO"].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
+    )
+      ? eventosChinautla.push(evento)
+      : eventosSinChinautla.push(evento);
+  }); // ZONA 6
+  eventosPorZonaConFuente[5] = eventosSinChinautla;
+  eventosPorZonaConFuente[22] = [
+    ...eventosPorZonaConFuente[22],
+    ...eventosChinautla,
+  ];
+  /* FIN REASIGNANDO CHINAUTLA*/
+
   pintarEventosPorZona(eventosPorZonaConFuente);
 });
 
@@ -272,6 +289,23 @@ horaInicioPorZona.addEventListener("change", async (e) => {
   eventosPorZonaConFuente.push(eventosVillaNueva);
   /* FIN AGREGANDO ZONA VILLA NUEVA */
 
+  /* REASIGNANDO CHINAUTLA */
+  const eventosChinautla = [];
+  const eventosSinChinautla = [];
+  eventosPorZonaConFuente[5].forEach((evento) => {
+    ["SANTA LUISA", "SANTA FAZ", "SAN JULIAN", "SAUZALITO"].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
+    )
+      ? eventosChinautla.push(evento)
+      : eventosSinChinautla.push(evento);
+  }); // ZONA 6
+  eventosPorZonaConFuente[5] = eventosSinChinautla;
+  eventosPorZonaConFuente[22] = [
+    ...eventosPorZonaConFuente[22],
+    ...eventosChinautla,
+  ];
+  /* FIN REASIGNANDO CHINAUTLA*/
+
   pintarEventosPorZona(eventosPorZonaConFuente);
 });
 
@@ -348,6 +382,23 @@ horaFinalPorZona.addEventListener("change", async (e) => {
   eventosPorZonaConFuente[11] = eventosSinVillaNueva;
   eventosPorZonaConFuente.push(eventosVillaNueva);
   /* FIN AGREGANDO ZONA VILLA NUEVA */
+
+  /* REASIGNANDO CHINAUTLA */
+  const eventosChinautla = [];
+  const eventosSinChinautla = [];
+  eventosPorZonaConFuente[5].forEach((evento) => {
+    ["SANTA LUISA", "SANTA FAZ", "SAN JULIAN", "SAUZALITO"].includes(
+      encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
+    )
+      ? eventosChinautla.push(evento)
+      : eventosSinChinautla.push(evento);
+  }); // ZONA 6
+  eventosPorZonaConFuente[5] = eventosSinChinautla;
+  eventosPorZonaConFuente[22] = [
+    ...eventosPorZonaConFuente[22],
+    ...eventosChinautla,
+  ];
+  /* FIN REASIGNANDO CHINAUTLA*/
 
   pintarEventosPorZona(eventosPorZonaConFuente);
 });
