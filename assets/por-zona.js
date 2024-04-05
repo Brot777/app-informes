@@ -238,8 +238,8 @@ horaInicioPorZona.addEventListener("change", async (e) => {
   const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
 
   const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
-    fechaInicioDeHoyISO,
-    fechaActualISO
+    horaInicioIso,
+    horaFinIso
   );
 
   const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
@@ -338,8 +338,8 @@ horaFinalPorZona.addEventListener("change", async (e) => {
   const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
 
   const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
-    fechaInicioDeHoyISO,
-    fechaActualISO
+    horaInicioIso,
+    horaFinIso
   );
 
   const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
