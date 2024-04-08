@@ -174,7 +174,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
       tr.innerHTML = `
     <td>${task.id}</td>
     <td>Falta de Agua</td>
-    <td>${idsSubtipoDeTarea[task.taskSubType.toString()]}</td>
+    <td>${idsSubtipoDeTarea[task.taskSubType.toString()] || "Domiciliar"}</td>
     <td colspan="2">${task.description}</td>
     <td>${arrayNombreZonas[i]}</td>
     <td>${encontrarColoniaEnDescripcion(
