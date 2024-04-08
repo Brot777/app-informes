@@ -19,7 +19,7 @@ export const renderizarGrafica = (eventosPorZona) => {
       labels: arrayNombreZonas,
       datasets: [
         {
-          label: "Faltas De agua",
+          label: "Faltas",
           backgroundColor: "#3B7DDD",
           data: faltas,
         },
