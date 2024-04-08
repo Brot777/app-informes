@@ -172,7 +172,7 @@ export const colonias = {
     "PROYECTO 4-4": ["PROYECTO 4-4", "PROYECTOS 4-4", "proyecto 4 4"],
     QUINTANAL: ["QUINTANAL"],
     "SAN JUAN DE DIOS": ["SAN JUAN DE DIOS"],
-    "SAN MARTIN": ["SAN MARTIN"],
+    "SAN MARTIN": ["SAN MARTIN", "S MARTIN"],
     /* CHINAUTLA */
     "SANTA LUISA": ["SANTA LUISA"],
     "SANTA MARTA": ["SANTA MARTA"],
