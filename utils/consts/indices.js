@@ -92,9 +92,15 @@ export const fuentesDeIngreso = {
 export const colonias = {
   "ZONA 1": {
     GERONA: ["GERONA"],
-    "ASENTAMIENTO 5 DE OCTUBRE": ["5 DE OCTUBRE"],
+    "ASENTAMIENTO 5 DE OCTUBRE": ["ASENTAMIENTO 5 DE OCTUBRE", "5 DE OCTUBRE"],
+    "ASENTAMIENTO COLINAS": ["ASENTAMIENTO COLINAS", "COLINAS"],
+    "ASENTAMIENTO EL ROBLE": ["ASENTAMIENTO EL ROBLE", "EL ROBLE"],
     BARRANQUILLA: ["BARRANQUILLA"],
+    CANDELARIA: ["CANDELARIA"],
+    "COLONIA MILITAR": ["MILITAR"],
+    "LA PARROQUIA": ["LA PARROQUIA"],
     "LAS VICTORIAS": ["LAS VICTORIAS", "las victoria", "la victorias"],
+    "10 DE MAYO": ["10 DE MAYO"],
   },
   "ZONA 2": {
     "ASENTAMIENTO MANUEL COLOM A": ["colonia manuel argueta"],
