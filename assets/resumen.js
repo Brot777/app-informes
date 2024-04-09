@@ -78,6 +78,7 @@ horaInicioResumen.addEventListener("change", async (e) => {
       "SAN JULIAN",
       "SAUZALITO",
       "EL MOLINO",
+      "SANTA ISABEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
@@ -150,6 +151,7 @@ horaFinalResumen.addEventListener("change", async (e) => {
       "SAN JULIAN",
       "SAUZALITO",
       "EL MOLINO",
+      "SANTA ISABEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )

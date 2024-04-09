@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       "SANTA MARTA",
       "SAUZALITO",
       "EL MOLINO",
+      "SANTA ISABEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
@@ -307,6 +308,7 @@ horaInicioPorZona.addEventListener("change", async (e) => {
       "SANTA MARTA",
       "SAUZALITO",
       "EL MOLINO",
+      "SANTA ISABEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
@@ -408,6 +410,7 @@ horaFinalPorZona.addEventListener("change", async (e) => {
       "SANTA MARTA",
       "SAUZALITO",
       "EL MOLINO",
+      "SANTA ISABEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
