@@ -72,7 +72,13 @@ horaInicioResumen.addEventListener("change", async (e) => {
   const eventosChinautla = [];
   const eventosSinChinautla = [];
   eventosPorZona[5].forEach((evento) => {
-    ["SANTA LUISA", "SANTA FAZ", "SAN JULIAN", "SAUZALITO"].includes(
+    [
+      "SANTA LUISA",
+      "SANTA FAZ",
+      "SAN JULIAN",
+      "SAUZALITO",
+      "EL MOLINO",
+    ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
       ? eventosChinautla.push(evento)
@@ -138,7 +144,13 @@ horaFinalResumen.addEventListener("change", async (e) => {
   const eventosChinautla = [];
   const eventosSinChinautla = [];
   eventosPorZona[5].forEach((evento) => {
-    ["SANTA LUISA", "SANTA FAZ", "SAN JULIAN", "SAUZALITO"].includes(
+    [
+      "SANTA LUISA",
+      "SANTA FAZ",
+      "SAN JULIAN",
+      "SAUZALITO",
+      "EL MOLINO",
+    ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
       ? eventosChinautla.push(evento)
