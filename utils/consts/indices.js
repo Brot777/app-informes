@@ -104,7 +104,7 @@ export const colonias = {
   },
   "ZONA 2": {
     "ASENTAMIENTO MANUEL COLOM A": ["colonia manuel argueta"],
-    "BARRIO JOCOTENANGO": ["Jocotenango"],
+    "BARRIO JOCOTENANGO": ["Jocotenango", "Jocotengo"],
     "BARRIO MODERNO": ["B MODERNO", "MODERNO", "BARRIO MODERNO"],
     "CIUDAD NUEVA": ["CIUDAD NUEVA", "las victoria", "la victorias"],
     "EL SAUCE": ["EL SAUCE", "SAUCE"],
