@@ -158,6 +158,7 @@ export const colonias = {
     "ASENTAMIENTO MONROY": ["ASENTAMIENTO MONROY"],
     "AVENIDA FERROCARRIL": ["AVENIDA FERROCARRIL"],
     "BARRIO SAN ANTONIO": ["SAN ANTONIO", "san atonio"],
+    "SAN MARTIN": ["SAN MARTIN", "S MARTIN"],
     CIPRESALES: ["CIPRESALES"],
     CANDELARIA: ["CANDELARIA"],
     "EL CARMEN": ["EL CARMEN"],
@@ -178,7 +179,7 @@ export const colonias = {
     "PROYECTO 4-4": ["PROYECTO 4-4", "PROYECTOS 4-4", "proyecto 4 4"],
     QUINTANAL: ["QUINTANAL"],
     "SAN JUAN DE DIOS": ["SAN JUAN DE DIOS"],
-    "SAN MARTIN": ["SAN MARTIN", "S MARTIN"],
+
     /* CHINAUTLA */
     "SANTA LUISA": ["SANTA LUISA"],
     "SANTA MARTA": ["SANTA MARTA"],
