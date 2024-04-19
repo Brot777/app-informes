@@ -140,7 +140,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
     const titleCard = document.createElement("div");
     titleCard.classList.add("badge", "bg-dark", "w-100", "py-2");
-    titleCard.innerHTML = `${arrayNombreZonas[i]} - <span class="badge bg-info">faltas: ${eventosZona.length}</span>`;
+    titleCard.innerHTML = `${arrayNombreZonas[i]} - faltas: ${eventosZona.length}`;
     if (eventosZona.length == 0) {
       return;
     }
