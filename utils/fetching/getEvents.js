@@ -56,25 +56,15 @@ export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
     response.json()
   );
   const arrayEventosData = await Promise.all(arrayPromisesEventos);
-  console.log(arrayEventosData);
 
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
   const arrayEventos = arrayEventosData.map((eventoData, i) =>
     eventoData.data.tasks.filter((evento) => {
       const fechaActual = new Date(evento.createdAt);
-      if (i == 16) {
-        console.log(
-          evento.id,
-          { fechaInicialObj, fechaActual, fechaFinalObj },
-          fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj
-        );
-      }
 
       return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
     })
   );
-
-  console.log(arrayEventos);
   return arrayEventos;
 };
