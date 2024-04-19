@@ -140,7 +140,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
     const titleCard = document.createElement("div");
     titleCard.classList.add("badge", "bg-dark", "w-100", "py-2");
-    titleCard.innerText = arrayNombreZonas[i];
+    titleCard.innerText = `${arrayNombreZonas[i]} - faltas:${eventosZona.length}`;
     if (eventosZona.length == 0) {
       return;
     }
@@ -149,7 +149,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     const tableZone = document.createElement("table");
     tableZone.classList.add("table", "table-hover", "table-patients");
 
-    tableZone.innerHTML = ` <thead>
+    tableZone.innerHTML = `<thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Tipo de Evento</th>
