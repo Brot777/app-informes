@@ -120,5 +120,121 @@
     <script src="https://unpkg.com/pdf-lib"></script>
     <!-- SCRIPS -->
     <script src="./assets/por-zona.js" type="module"></script>
+    <script>
+      function ordenarColumnaTexto(index, numberTable) {
+        var tabla, filas, cambio, i, x, y, debeCambiar;
+
+        tabla = document.getElementById(`tabla-${numberTable}`);
+        /*  const head = document.getElementById(`trHead-${numberTable}`); */
+
+        cambio = true;
+
+        while (cambio) {
+          cambio = false;
+          filas = tabla.rows;
+
+          for (i = 1; i < filas.length - 1; i++) {
+            debeCambiar = false;
+
+            x = filas[i].getElementsByTagName("td")[index];
+            y = filas[i + 1].getElementsByTagName("td")[index];
+
+            if (x.textContent > y.textContent) {
+              debeCambiar = true;
+              break;
+            }
+          }
+
+          if (debeCambiar) {
+            filas[i].parentNode.insertBefore(filas[i + 1], filas[i]);
+            cambio = true;
+          }
+        }
+        /*  console.log(index, numberTable);
+        console.log(head.children[index]);
+        head.children[index].style.boxShadow = "0px 0px 2px #0000005"; */
+      }
+      function ordenarColumnaFecha(index, numberTable) {
+        var tabla, filas, cambio, i, x, y, debeCambiar;
+
+        tabla = document.getElementById(`tabla-${numberTable}`);
+        console.log(tabla.rows);
+        cambio = true;
+
+        while (cambio) {
+          cambio = false;
+          filas = tabla.rows;
+
+          for (i = 1; i < filas.length - 1; i++) {
+            debeCambiar = false;
+
+            x = filas[i].getElementsByTagName("td")[index];
+            y = filas[i + 1].getElementsByTagName("td")[index];
+
+            const [xFecha, xHora] = x.textContent.split(" ");
+            const [xDia, xMes, xAño] = xFecha.split("/");
+            const [xHoras, xMinutos] = xHora.split(":");
+            const primerDateObj = new Date(
+              Number(xAño),
+              Number(xMes) - 1,
+              Number(xDia),
+              Number(xHoras),
+              Number(xMinutos),
+              0
+            );
+            const [yFecha, yHora] = y.textContent.split(" ");
+            const [yDia, yMes, yAño] = yFecha.split("/");
+            const [yHoras, yMinutos] = yHora.split(":");
+            const segundoDateObj = new Date(
+              Number(yAño),
+              Number(yMes) - 1,
+              Number(yDia),
+              Number(yHoras),
+              Number(yMinutos),
+              0
+            );
+
+            if (primerDateObj > segundoDateObj) {
+              debeCambiar = true;
+              break;
+            }
+          }
+
+          if (debeCambiar) {
+            filas[i].parentNode.insertBefore(filas[i + 1], filas[i]);
+            cambio = true;
+          }
+        }
+      }
+      function ordenarColumnaNumero(index, numberTable) {
+        var tabla, filas, cambio, i, x, y, debeCambiar;
+
+        tabla = document.getElementById(`tabla-${numberTable}`);
+        console.log(tabla);
+        cambio = true;
+
+        while (cambio) {
+          cambio = false;
+          filas = tabla.rows;
+
+          for (i = 1; i < filas.length - 1; i++) {
+            debeCambiar = false;
+
+            x = filas[i].getElementsByTagName("td")[index];
+            y = filas[i + 1].getElementsByTagName("td")[index];
+
+            if (Number(x.textContent) > Number(y.textContent)) {
+              debeCambiar = true;
+              break;
+            }
+          }
+
+          if (debeCambiar) {
+            filas[i].parentNode.insertBefore(filas[i + 1], filas[i]);
+            cambio = true;
+          }
+        }
+      }
+    </script>
   </body>
 </html>

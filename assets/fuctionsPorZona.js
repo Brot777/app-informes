@@ -23,8 +23,10 @@ export const addEventMarker = () => {
   let $trZones = document.querySelectorAll(".patient-row");
   $trZones.forEach((tr) => {
     tr.addEventListener("click", async (e) => {
-      tr.classList.toggle("table-danger")
-      tr.classList.toggle("table-secondary")
+      tr.classList.toggle("table-danger");
+      tr.classList.toggle("table-secondary");
     });
   });
 };
+
+export const ordenarPorColonia = () => {};

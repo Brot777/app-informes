@@ -148,21 +148,23 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
     const tableZone = document.createElement("table");
     tableZone.classList.add("table", "table-hover", "table-patients");
+    tableZone.setAttribute("data-numberTable", i);
+    tableZone.setAttribute("id", `tabla-${i}`);
 
     tableZone.innerHTML = `<thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Tipo de Evento</th>
-      <th scope="col">Tipo falta de Agua</th>
-      <th scope="col" colspan="2">Descripcion</th>
-      <th scope="col">Zona</th>
-      <th scope="col">Colonia</th>
-      <th scope="col">Fuente de Ingreso</th>
-      <th scope="col">Fecha Creó</th>
-      <th scope="col">Dia</th>
-      <th scope="col">Mes</th>
-      <th scope="col">Region</th>
-      <th scope="col">Año</th>
+    <tr id="trHead-${i}">
+      <th scope="col" onclick="ordenarColumnaNumero(0,${i})" >Id</th>
+      <th scope="col" onclick="ordenarColumnaTexto(1,${i})">Tipo de Evento</th>
+      <th scope="col" onclick="ordenarColumnaTexto(2,${i})">Tipo falta de Agua</th>
+      <th scope="col" onclick="ordenarColumnaTexto(3,${i})" colspan="2">Descripcion</th>
+      <th scope="col" onclick="ordenarColumnaTexto(4,${i})" >Zona</th>
+      <th scope="col" onclick="ordenarColumnaTexto(5,${i})">Colonia</th>
+      <th scope="col" onclick="ordenarColumnaTexto(6,${i})">Fuente de Ingreso</th>
+      <th scope="col" onclick="ordenarColumnaFecha(7,${i})">Fecha Creó</th>
+      <th scope="col" onclick="ordenarColumnaNumero(8,${i})">Dia</th>
+      <th scope="col" onclick="ordenarColumnaNumero(9,${i})">Mes</th>
+      <th scope="col" onclick="ordenarColumnaNumero(10,${i})">Region</th>
+      <th scope="col" onclick="ordenarColumnaNumero(11,${i})">Año</th>
     </tr>
   </thead>`;
     const tbody = document.createElement("tbody");
