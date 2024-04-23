@@ -76,6 +76,7 @@ horaInicioResumen.addEventListener("change", async (e) => {
       "SANTA LUISA",
       "SANTA FAZ",
       "SAN JULIAN",
+      "SANTA MARTA",
       "SAUZALITO",
       "EL MOLINO",
       "SANTA ISABEL",
@@ -149,6 +150,7 @@ horaFinalResumen.addEventListener("change", async (e) => {
       "SANTA LUISA",
       "SANTA FAZ",
       "SAN JULIAN",
+      "SANTA MARTA",
       "SAUZALITO",
       "EL MOLINO",
       "SANTA ISABEL",
@@ -169,5 +171,4 @@ horaFinalResumen.addEventListener("change", async (e) => {
 /* REFECHIN DE DATA CADA 5 MINUTOS */
 setInterval(async () => {
   await actualizarGrafica();
-  console.log("refechig");
 }, 5 * 60 * 1000);

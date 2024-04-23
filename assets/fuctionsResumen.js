@@ -124,6 +124,7 @@ export const actualizarGrafica = async () => {
   /* REASIGNANDO CHINAUTLA */
   const eventosChinautla = [];
   const eventosSinChinautla = [];
+
   eventosPorZona[5].forEach((evento) => {
     [
       "SANTA LUISA",
@@ -131,6 +132,8 @@ export const actualizarGrafica = async () => {
       "SAN JULIAN",
       "SANTA MARTA",
       "SAUZALITO",
+      "EL MOLINO",
+      "SANTA ISABEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
