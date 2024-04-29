@@ -284,7 +284,7 @@ export const colonias = {
     "GRANAI I": ["GRANAI I", "GRANAI 1"],
     "GRANAI II": ["GRANAI II", "GRANAI 2"],
     "GRANAI III": ["GRANAI III", "GRANAI 3"],
-    "LAS CHARCAS": ["LAS CHARCAS", "CHARCAS", "CHARCA"],
+    "LAS CHARCAS": ["LAS CHARCAS", "CHARCAS", "CHARCA", "CHACRCAS"],
     "LOMA LINDA": ["LOMA LINDA"],
     MARISCAL: ["MARISCAL"],
     MIRADOR: ["MIRADOR"],
