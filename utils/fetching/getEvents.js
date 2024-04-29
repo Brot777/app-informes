@@ -42,6 +42,7 @@ export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
   const horaInicioConMargenOBj = new Date(horaInicio);
   horaInicioConMargenOBj.setDate(horaInicioConMargenOBj.getDate() - 1);
   const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
+  console.log(horaInicioConMargenString);
   const arrayPromisesResponses = arrayFuentesDeIngreso.map((parametro) => {
     return fetch(
       `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3401&transfer=0&customs[56][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
