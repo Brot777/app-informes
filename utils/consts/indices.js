@@ -299,7 +299,13 @@ export const colonias = {
     "MIRADOR 2": ["MIRADOR II", "MIRADOR 2"],
     MIRAFLORES: ["MIRAFLORES"],
     PRIMAVERA: ["PRIMAVERA"],
-    ROOSEVELT: ["ROOSEVELT", "ROOSERVELTH", "roosvelt", "ROOSELVETH"],
+    ROOSEVELT: [
+      "ROOSEVELT",
+      "ROOSERVELTH",
+      "roosvelt",
+      "ROOSELVETH",
+      "ROSVELT",
+    ],
     "SAN JORGE": ["SAN JORGE"],
     "SAN JORGE": ["SAN JORGE"],
     TOLEDO: ["TOLEDO"],
@@ -389,7 +395,7 @@ export const colonias = {
     "LOMAS DE PAMPLONA": ["LOMAS DE PAMPLONA"],
     PAMPLONA: ["PAMPLONA"],
     "REYNA BARRIOS": ["REYNA BARRIOS"],
-    "SANTA FE": ["SANTA FE"],
+    "SANTA FE": ["SANTA FE", "Sant Fe"],
   },
   "ZONA 14": {
     "CANTON 21": ["CANTON 21"],
