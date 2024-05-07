@@ -320,12 +320,12 @@ export const colonias = {
   "ZONA 12": {
     "3 DE JULIO": ["3 DE JULIO"],
     "ANEXO EL MIRADOR": ["ANEXO EL MIRADOR", "EL MIRADOR"],
+    CEDROS: ["CEDROS"],
     "EL CARMEN": ["EL CARMEN"],
     "EL BOSQUE": ["EL BOSQUE"],
     JAVIER: ["JAVIER", "EL JAVIER"],
     "LA REFORMITA": ["LA REFORMITA", "REFORMITA"],
     "MILLES ROCK": ["MILLES ROCK", "Miller Rock", "Meller Rock", "Rock"],
-
     "SAN CARLOS": ["SAN CARLOS"],
     "SANTA ELISA": ["SANTA ELISA"],
     "SANTA ROSA": ["SANTA ROSA"],
