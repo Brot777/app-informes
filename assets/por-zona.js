@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       "VILLA LOBOS",
       "VILLA LOBOS 1",
       "VILLA LOBOS 2",
+      "VILLA LOBOS 3",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
     )
@@ -289,6 +290,7 @@ horaInicioPorZona.addEventListener("change", async (e) => {
       "VILLA LOBOS",
       "VILLA LOBOS 1",
       "VILLA LOBOS 2",
+      "VILLA LOBOS 3",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
     )
@@ -391,6 +393,7 @@ horaFinalPorZona.addEventListener("change", async (e) => {
       "VILLA LOBOS",
       "VILLA LOBOS 1",
       "VILLA LOBOS 2",
+      "VILLA LOBOS 3",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
     )

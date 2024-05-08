@@ -293,7 +293,7 @@ export const colonias = {
     CASTAÑAS: ["CASTAÑAS"],
     "EL PROGRESO": ["EL PROGRESO", "PROGRESO"],
     GRANAI: ["GRANAI"],
-    "GRANAI I": ["GRANAI I", "GRANAI 1"],
+    "GRANAI I": ["GRANAI I", "GRANAI 1", "granai townson 1"],
     "GRANAI II": ["GRANAI II", "GRANAI 2"],
     "GRANAI III": ["GRANAI III", "GRANAI 3"],
     "LAS CHARCAS": ["LAS CHARCAS", "CHARCAS", "CHARCA", "CHACRCAS"],
@@ -382,6 +382,12 @@ export const colonias = {
       "VILLA LOBOS II",
       "VILLALOBOS II",
       "VILLALOBOS 2",
+    ],
+    "VILLA LOBOS 3": [
+      "VILLA LOBOS 3",
+      "VILLA LOBOS III",
+      "VILLALOBOS III",
+      "VILLALOBOS #",
     ],
   },
   "ZONA 13": {
@@ -829,6 +835,12 @@ export const colonias = {
       "VILLA LOBOS II",
       "VILLALOBOS II",
       "VILLALOBOS 2",
+    ],
+    "VILLA LOBOS 3": [
+      "VILLA LOBOS 3",
+      "VILLA LOBOS III",
+      "VILLALOBOS III",
+      "VILLALOBOS #",
     ],
   },
 };

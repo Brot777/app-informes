@@ -58,6 +58,7 @@ horaInicioResumen.addEventListener("change", async (e) => {
       "VILLA LOBOS",
       "VILLA LOBOS 1",
       "VILLA LOBOS 2",
+      "VILLA LOBOS 3",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
     )
@@ -132,6 +133,7 @@ horaFinalResumen.addEventListener("change", async (e) => {
       "VILLA LOBOS",
       "VILLA LOBOS 1",
       "VILLA LOBOS 2",
+      "VILLA LOBOS 3",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 12"], evento.description)
     )
