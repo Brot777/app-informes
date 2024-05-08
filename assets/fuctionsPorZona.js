@@ -10,7 +10,7 @@ export const convertirArrayAcsv = (array) => {
     const values = headers.map((header) => item[header]);
     csvContent += values.map((value) => `"${value}"`).join(",") + "\r\n";
   });
-  console.log(csvContent);
+
   return csvContent;
 };
 
