@@ -370,12 +370,12 @@ export const colonias = {
       "Monte Maria III",
       "MONTE MARIA 3",
     ],
-    VILLALOBOS: ["VILLALOBOS"],
     "VILLA LOBOS 1": [
       "VILLA LOBOS 1",
       "VILLA LOBOS I",
       "VILLALOBOS I",
       "VILLALOBOS 1",
+      "Villalobos |",
     ],
     "VILLA LOBOS 2": [
       "VILLA LOBOS 2",
@@ -823,12 +823,12 @@ export const colonias = {
       "MONTE MARIA 3",
     ],
     PORVENIR: ["PORVENIR"],
-    VILLALOBOS: ["VILLALOBOS"],
     "VILLA LOBOS 1": [
       "VILLA LOBOS 1",
       "VILLA LOBOS I",
       "VILLALOBOS I",
       "VILLALOBOS 1",
+      "Villalobos |",
     ],
     "VILLA LOBOS 2": [
       "VILLA LOBOS 2",
