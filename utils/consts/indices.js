@@ -320,6 +320,7 @@ export const colonias = {
       "roosvelt",
       "ROOSELVETH",
       "ROSVELT",
+      "Rooselvelt",
     ],
     "SAN JORGE": ["SAN JORGE"],
     "SAN JORGE": ["SAN JORGE"],
