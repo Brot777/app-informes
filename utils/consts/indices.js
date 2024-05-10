@@ -188,6 +188,7 @@ export const colonias = {
       "proyecto 4 10",
       "poyectos 4-10",
       "PROYECTO 4/10",
+      "PROYECTOS 4/10",
     ],
     "PROYECTO 4-3": ["PROYECTO 4-3", "PROYECTOS 4-3", "proyecto 4 3"],
     "PROYECTO 4-4": [
@@ -195,6 +196,7 @@ export const colonias = {
       "PROYECTOS 4-4",
       "proyecto 4 4",
       "PROYECTO 4/4",
+      "PROYECTOS 4/4",
     ],
     QUINTANAL: ["QUINTANAL"],
     "SAN JUAN DE DIOS": ["SAN JUAN DE DIOS"],
