@@ -103,7 +103,7 @@ export const colonias = {
     "10 DE MAYO": ["10 DE MAYO"],
   },
   "ZONA 2": {
-    "SIMEON CAÑAS": ["SIMEON CAÑAS"],
+    "SIMEON CAÑAS": ["SIMEON CAÑAS", "SEMEONE CAÑA"],
     "ASENTAMIENTO MANUEL COLOM A": ["colonia manuel argueta"],
     "BARRIO JOCOTENANGO": ["Jocotenango", "Jocotengo"],
     "BARRIO MODERNO": ["B MODERNO", "MODERNO", "BARRIO MODERNO"],
