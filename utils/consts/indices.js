@@ -299,7 +299,7 @@ export const colonias = {
     OAKLAND: ["OAKLAND", "OKLAN"],
   },
   "ZONA 11": {
-    CARABANCHEL: ["CARABANCHEL", "carabache", "carabachel"],
+    CARABANCHEL: ["CARABANCHEL", "carabache", "carabachel", "CARABANCHE"],
     CASTAÑAS: ["CASTAÑAS"],
     "EL PROGRESO": ["EL PROGRESO", "PROGRESO"],
     GRANAI: ["GRANAI"],
