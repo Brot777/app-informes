@@ -292,7 +292,7 @@ export const colonias = {
   },
   "ZONA 9": {},
   "ZONA 10": {
-    ALCAZAR: ["ALCAZAR"],
+    ALCAZAR: ["ALCAZAR","ALCALZAR"],
     "BARRIO LA VILLA": ["BARRIO LA VILLA", "LA VILLA"],
     CONCEPCIÓN: ["CONCEPCIÓN"],
     "EL PILAR": ["EL PILAR", "PILAR"],
