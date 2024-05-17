@@ -797,6 +797,7 @@ export const colonias = {
     SAUZALITO: ["EL SAUZALITO", "SAUZALITO", "ZAUSALITO", "sausalito"],
     "EL MOLINO": ["EL MOLINO"],
     "SANTA ISABEL": ["SANTA ISABEL"],
+    "FINCA SAN RAFAEL":["FINCA SAN RAFAEL","SAN RAFAEL"]
   },
   "ZONA 2 MX": {},
   "ZONA 3 MX": {},
