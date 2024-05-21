@@ -209,6 +209,7 @@ export const colonias = {
     SAUZALITO: ["EL SAUZALITO", "SAUZALITO", "ZAUSALITO", "sausalito"],
     "EL MOLINO": ["EL MOLINO"],
     "SANTA ISABEL": ["SANTA ISABEL"],
+    "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
   },
   "ZONA 7": {
     "4 DE FEBRERO": ["4 DE FEBRERO"],
@@ -292,7 +293,7 @@ export const colonias = {
   },
   "ZONA 9": {},
   "ZONA 10": {
-    ALCAZAR: ["ALCAZAR","ALCALZAR"],
+    ALCAZAR: ["ALCAZAR", "ALCALZAR"],
     "BARRIO LA VILLA": ["BARRIO LA VILLA", "LA VILLA"],
     CONCEPCIÓN: ["CONCEPCIÓN"],
     "EL PILAR": ["EL PILAR", "PILAR"],
@@ -797,7 +798,7 @@ export const colonias = {
     SAUZALITO: ["EL SAUZALITO", "SAUZALITO", "ZAUSALITO", "sausalito"],
     "EL MOLINO": ["EL MOLINO"],
     "SANTA ISABEL": ["SANTA ISABEL"],
-    "FINCA SAN RAFAEL":["FINCA SAN RAFAEL","SAN RAFAEL"]
+    "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
   },
   "ZONA 2 MX": {},
   "ZONA 3 MX": {},

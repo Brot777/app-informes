@@ -135,6 +135,7 @@ export const actualizarGrafica = async () => {
       "SAUZALITO",
       "EL MOLINO",
       "SANTA ISABEL",
+      "FINCA SAN RAFAEL",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
