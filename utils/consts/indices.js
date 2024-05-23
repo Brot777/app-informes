@@ -364,7 +364,7 @@ export const colonias = {
     "CIUDAD REAL": ["CIUDAD REAL"],
     "CIUDAD REAL I": ["CIUDAD REAL I", "CIUDAD REAL 1"],
     "CIUDAD REAL II": ["CIUDAD REAL II", "CIUDAD REAL 2"],
-    MEZQUITAL: ["MEZQUITAL"],
+    MEZQUITAL: ["MEZQUITAL", "Mesquital"],
     MONTEMARIA: ["MONTEMARIA", "MONTE MARIA"],
     "MONTEMARIA I": [
       "MONTEMARIA I",
@@ -390,6 +390,8 @@ export const colonias = {
       "VILLALOBOS I",
       "VILLALOBOS 1",
       "Villalobos |",
+      "VILLA LOBOS",
+      "villlalobos 1",
     ],
     "VILLA LOBOS 2": [
       "VILLA LOBOS 2",
@@ -817,7 +819,7 @@ export const colonias = {
     "CIUDAD REAL": ["CIUDAD REAL"],
     "CIUDAD REAL I": ["CIUDAD REAL I", "CIUDAD REAL 1"],
     "CIUDAD REAL II": ["CIUDAD REAL II", "CIUDAD REAL 2"],
-    MEZQUITAL: ["MEZQUITAL"],
+    MEZQUITAL: ["MEZQUITAL", "Mesquital"],
     MONTEMARIA: ["MONTEMARIA", "MONTE MARIA"],
     "MONTEMARIA I": [
       "MONTEMARIA I",
@@ -844,6 +846,8 @@ export const colonias = {
       "VILLALOBOS I",
       "VILLALOBOS 1",
       "Villalobos |",
+      "VILLA LOBOS",
+      "villlalobos 1",
     ],
     "VILLA LOBOS 2": [
       "VILLA LOBOS 2",
