@@ -542,7 +542,7 @@ export const colonias = {
     "ANEXO LAS ILUSIONES": ["ANEXO LAS ILUSIONES"],
     "ASENTAMIENTO 15 CALLE FINAL EL LIMÓN": [
       "ASENTAMIENTO 15 CALLE FINAL EL LIMÓN",
-      "EL LIMON",
+      "FINAL EL LIMON",
     ],
     "ASENTAMIENTO 3 DE MAYO": [
       "ASENTAMIENTO 3 DE MAYO",
@@ -597,7 +597,7 @@ export const colonias = {
     GALILEA: ["GALILEA"],
     GUAMILCO: ["GUAMILCO"],
     HOLANDA: ["HOLANDA"],
-    "JOYA SAN RAFAEL": ["JOYA SAN RAFAEL", "SAN RAFAEL", "JOYA"],
+    "JOYA SAN RAFAEL": ["JOYA SAN RAFAEL"],
     "JUANA DE ARCO": ["JUANA DE ARCO"],
     KENNEDY: ["KENNEDY"],
     "LA CAÑADA": ["LA CAÑADA", "CAÑADA"],
