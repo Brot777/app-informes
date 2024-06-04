@@ -287,6 +287,7 @@ export const colonias = {
       "LINDA VILLA 2",
     ],
     "VILLA LINDA III": ["VILLA LINDA III", "VILLA LINDA 3"],
+    RANCHERIA: ["RANCHERIA"],
   },
   "ZONA 8": {
     "CANTON GUARDA VIEJO": ["CANTON GUARDA VIEJO", "GUARDA VIEJO"],
