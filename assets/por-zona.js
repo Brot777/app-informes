@@ -258,6 +258,8 @@ horaInicioPorZona.addEventListener("change", async (e) => {
   const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
     eventosZona.map((evento) => {
       let fuenteDeIngreso = "";
+      estaMarcaMedidorEnDescripcion(evento.description) &&
+        (fuenteDeIngreso = "Verificación");
       eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
         const eventoFind = eventosFuente.find(
           (eventoF) => eventoF.id == evento.id
@@ -362,6 +364,8 @@ horaFinalPorZona.addEventListener("change", async (e) => {
   const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
     eventosZona.map((evento) => {
       let fuenteDeIngreso = "";
+      estaMarcaMedidorEnDescripcion(evento.description) &&
+        (fuenteDeIngreso = "Verificación");
       eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
         const eventoFind = eventosFuente.find(
           (eventoF) => eventoF.id == evento.id
