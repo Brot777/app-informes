@@ -16,7 +16,10 @@ import {
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
-import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
+import {
+  encontrarColoniaEnDescripcion,
+  estaMarcaMedidorEnDescripcion,
+} from "../utils/fuctions/obtenerCampo.js";
 import { addEventMarker, escapeNewlines } from "./fuctionsPorZona.js";
 
 /* VARIABLES GENERALES */
@@ -47,6 +50,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
     eventosZona.map((evento) => {
       let fuenteDeIngreso = "";
+      estaMarcaMedidorEnDescripcion(evento.description) &&
+        (fuenteDeIngreso = "Verificación");
       eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
         const eventoFind = eventosFuente.find(
           (eventoF) => eventoF.id == evento.id

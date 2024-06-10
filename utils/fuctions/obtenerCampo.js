@@ -27,3 +27,8 @@ export const encontrarColoniaEnDescripcion = (objColoniaZona, cadena) => {
 
   return coloniaNombre;
 };
+
+export const estaMarcaMedidorEnDescripcion = (cadena) => {
+  cadena = normalizarTexto(cadena); // Normaliza cadena
+  return cadena.includes(normalizarTexto("marca del medidor"));
+};
