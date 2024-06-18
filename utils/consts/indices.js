@@ -560,7 +560,11 @@ export const colonias = {
     "ASENTAMIENTO BELICE": ["ASENTAMIENTO BELICE"],
     ASENTAMIENTO: ["ASENTAMIENTO"],
     "RUTA AL ATLÁNTICO": ["RUTA AL ATLÁNTICO"],
-    "RESIDENCIALES ATLÁNTICO": ["residenciales Atlántico"],
+    "RESIDENCIALES ATLÁNTICO": [
+      "residenciales Atlantico",
+      "res. atlantico",
+      "RESIDENCIALES DE ATLANTICO",
+    ],
     ATLÁNTIDA: ["ATLÁNTIDA"],
     "ATLÁNTIDA MILITAR": ["ATLÁNTIDA MILITAR", "MILITAR"],
     "AVENTURERA KM15": ["AVENTURERA KM15", "AVENTURERA"],
