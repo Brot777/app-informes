@@ -579,7 +579,7 @@ export const colonias = {
     "EL CHATÍO": ["EL CHATÍO", "CHATÍO"],
     "EL CHATO": ["EL CHATO", "CHATO"],
     "EL GRAN CAÑÓN KM15": ["EL GRAN CAÑÓN KM15", "GRAN CAÑÓN"],
-    "EL LIMÓN": ["EL LIMÓN"],
+    "EL LIMÓN": ["EL LIMÓN", "limón"],
     "EL LIMÓN 2": ["EL LIMÓN 2", "EL LIMÓN II"],
     "EL MIRADOR/LAS ILUSIONES": [
       "EL MIRADOR/LAS ILUSIONES",
