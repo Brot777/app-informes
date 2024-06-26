@@ -148,6 +148,7 @@ export const colonias = {
       "JARDINES DE LA ASUNCION",
       "jardines la asuncion",
       "JARDINES DE ASUNCIÓN",
+      "JARDINES",
     ],
     "LA CHACARA": ["CHACARA", "LA CHACARA"],
     "LA LABOR": ["LABOR", "LA LABOR"],
