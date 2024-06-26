@@ -146,9 +146,8 @@ export const colonias = {
     FERROCARRILERA: ["FERROCARRILERA", "FERROCARRILERO"],
     "JARDINES DE LA ASUNCION": [
       "JARDINES DE LA ASUNCION",
-      "jardines la asuncion",
-      "JARDINES DE ASUNCIÓN",
       "JARDINES",
+      "jardies",
     ],
     "LA CHACARA": ["CHACARA", "LA CHACARA"],
     "LA LABOR": ["LABOR", "LA LABOR"],
