@@ -623,7 +623,11 @@ export const colonias = {
     "LAS TAPIAS": ["LAS TAPIAS"],
     LAVARREDA: ["LAVARREDA", "LA BARREDA", "LA BARRERRA", "la varreda"],
     "LO DE RODRÍGUEZ": ["LO DE RODRÍGUEZ"],
-    "LOMAS DE LAVARREDA": ["LOMAS DE LAVARREDA", "LOMAS DE LA BARRERA"],
+    "LOMAS DE LAVARREDA": [
+      "LOMAS DE LAVARREDA",
+      "LOMAS DE LA BARRERA",
+      " lomas de lavarrera",
+    ],
     "LOMAS DE SANTA FAZ": ["LOMAS DE SANTA FAZ"],
     "LOS CARACOLES I": ["LOS CARACOLES I", "LOS CARACOLES 1"],
     "LOS ENCINOS": ["LOS ENCINOS"],
