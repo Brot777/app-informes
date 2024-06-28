@@ -177,7 +177,6 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     const tbody = document.createElement("tbody");
     tbody.setAttribute("id", "tbody-events");
     eventosZona.forEach((task, j) => {
-      console.log(task);
       const tr = document.createElement("tr");
       tr.classList.add("table-secondary");
       tr.classList.add("patient-row");
@@ -185,7 +184,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
       tr.setAttribute("id", task.id);
       tr.innerHTML = `
     <td>${task.id}</td>
-    <td>Falta de Agua</td>
+    <td>Fuga</td>
     <td>${idsSubtipoDeTarea[task.taskSubType.toString()] || "Domiciliar"}</td>
     <td colspan="2">${task.description}</td>
     <td>${arrayNombreZonas[i]}</td>

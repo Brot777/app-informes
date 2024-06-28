@@ -2,6 +2,19 @@ export const idsSubtipoDeTarea = {
   7135: "Domiciliar",
   7134: "Sectorial",
   7136: "Inconformidad de Horario",
+  7119: "En Banqueta",
+  7120: "En Macromedidor",
+  7121: "En Medidor",
+  7122: "En Asfalto",
+  7124: "En Llave de Paso Mayor 3/4",
+  7125: "Robo de Medidor",
+  7130: "Llave de Válvula",
+  8241: "Fuga en Línea de Conducción",
+  8242: "Fuga Subterránea",
+  8243: "Filtración en Edificio",
+  13924: "Provocada por Terceros",
+  13925: "Por Trabajos Municipales",
+  13955: "Emergencia",
 };
 
 export const Regiones = {
