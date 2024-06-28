@@ -147,7 +147,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
     const titleCard = document.createElement("div");
     titleCard.classList.add("badge", "bg-dark", "w-100", "py-2");
-    titleCard.innerHTML = `${arrayNombreZonas[i]} - FALTAS: ${eventosZona.length}`;
+    titleCard.innerHTML = `${arrayNombreZonas[i]} - FUGAS: ${eventosZona.length}`;
     if (eventosZona.length == 0) {
       return;
     }
@@ -527,7 +527,7 @@ document
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = `reporte_falta_de_agua-${convertirFechaISOaHoraFecha(
+    link.download = `reporte_fugas-${convertirFechaISOaHoraFecha(
       new Date()
     )}.pdf`;
     link.click();
