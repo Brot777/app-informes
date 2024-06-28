@@ -651,7 +651,7 @@ export const colonias = {
       "PASAJE",
       "LOS CORRALES",
     ],
-    "PORTAL DEL BOSQUE": ["Portal del Bosque"],
+    "PORTAL DEL BOSQUE": ["Portal del Bosque", "por tal del bosque"],
     "QUINTA RUIZ": ["QUINTA RUIZ"],
     "RAFAEL CASTRO": ["RAFAEL CASTRO"],
     "RENACIMIENITO PARTE SUR": [
