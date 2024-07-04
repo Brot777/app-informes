@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
     eventosZona.map((evento) => {
+      console.log(evento);
       let fuenteDeIngreso = "";
       estaMarcaMedidorEnDescripcion(evento.description) &&
         (fuenteDeIngreso = "Verificación");
@@ -162,7 +163,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     <tr id="trHead-${i}">
       <th scope="col" onclick="ordenarColumnaNumero(0,${i})" >Id</th>
       <th scope="col" onclick="ordenarColumnaTexto(1,${i})">Tipo de Evento</th>
-      <th scope="col" onclick="ordenarColumnaTexto(2,${i})">Tipo falta de Agua</th>
+      <th scope="col" onclick="ordenarColumnaTexto(2,${i})">Tipo fuga</th>
       <th scope="col" onclick="ordenarColumnaTexto(3,${i})" colspan="2">Descripcion</th>
       <th scope="col" onclick="ordenarColumnaTexto(4,${i})" >Zona</th>
       <th scope="col" onclick="ordenarColumnaTexto(5,${i})">Colonia</th>
