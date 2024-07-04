@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
     eventosZona.map((evento) => {
-      console.log(evento);
       let fuenteDeIngreso = "";
       estaMarcaMedidorEnDescripcion(evento.description) &&
         (fuenteDeIngreso = "Verificación");
