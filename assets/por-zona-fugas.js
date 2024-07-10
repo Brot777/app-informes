@@ -203,8 +203,8 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
       dataExportar.push({
         Id: task.id,
-        "Tipo de Evento": "Falta de Agua",
-        "Tipo falta de Agua": idsSubtipoDeTarea[task.taskSubType.toString()],
+        "Tipo de Evento": "Fuga",
+        "Tipo de Fuga": idsSubtipoDeTarea[task.taskSubType.toString()],
         Descripcion: task.description,
         Zona: arrayNombreZonas[i],
         Colonia: encontrarColoniaEnDescripcion(
