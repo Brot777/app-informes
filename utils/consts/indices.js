@@ -117,7 +117,10 @@ export const colonias = {
   },
   "ZONA 2": {
     "SIMEON CAÑAS": ["SIMEON CAÑAS", "SEMEONE CAÑA"],
-    "ASENTAMIENTO MANUEL COLOM A": ["colonia manuel argueta"],
+    "ASENTAMIENTO MANUEL COLOM A": [
+      "colonia manuel argueta",
+      "Manuel Colom Argueta",
+    ],
     "BARRIO JOCOTENANGO": ["Jocotenango", "Jocotengo"],
     "BARRIO MODERNO": ["B MODERNO", "MODERNO", "BARRIO MODERNO"],
     "CIUDAD NUEVA": ["CIUDAD NUEVA", "Cuidada Nueva"],
@@ -151,6 +154,7 @@ export const colonias = {
   "ZONA 4": {},
   "ZONA 5": {
     "20 DE OCTUBRE": ["20 DE OCTUBRE"],
+    "15 DE AGOSTO": ["15 DE AGOSTO"],
     ABRIL: ["ABRIL"],
     ARRIVILLAGA: ["ARRIVILLAGA"],
     "BARRIO NUEVO": ["BARRIO NUEVO"],
@@ -302,7 +306,7 @@ export const colonias = {
     "TIKAL II": ["TIKAL II", "TIKAL 2"],
     "TIKAL III": ["TIKAL III", "TIKAL 3"],
     TOLEDO: ["TOLEDO"],
-    "UTATLAN I": ["UTATLAN I", "UTATLAN 1", "UTATLAN"],
+    "UTATLAN I": ["UTATLAN I", "UTATLAN 1", "UTATLAN", "UTATALAN"],
     "VILLA LINDA II": [
       "VILLA LINDA II",
       "VILLA LINDA 2",
