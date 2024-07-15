@@ -530,7 +530,7 @@ document
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = `reporte_fugas-${convertirFechaISOaHoraFecha(
+    link.download = `reporte_fugas_pendientes-${convertirFechaISOaHoraFecha(
       new Date()
     )}.pdf`;
     link.click();
