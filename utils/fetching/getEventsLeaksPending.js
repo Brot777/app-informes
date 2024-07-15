@@ -24,7 +24,6 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
     response.json()
   );
   const arrayEventosData = await Promise.all(arrayPromisesEventos);
-  console.log(arrayEventosData);
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
   const arrayEventos = arrayEventosData.map((eventoData) =>
@@ -33,7 +32,6 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
       return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
     })
   );
-
   return arrayEventos;
 };
 

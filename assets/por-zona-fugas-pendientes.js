@@ -29,19 +29,20 @@ let dataGeneral = [];
 document.addEventListener("DOMContentLoaded", async () => {
   // Obtener la hora actual en formato ISO
   const fechaActualISO = new Date().toISOString();
-  // Obtener la hora de hoy a las 00:00 horas en formato ISO
-  const hoyMedianoche = new Date();
-  hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
-  const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
+  // Obtener la fecha hace 6 meses a las 00:00 formato ISO
+  const hoyMedianocheSeisMeses = new Date();
+  hoyMedianocheSeisMeses.setMonth(hoyMedianocheSeisMeses.getMonth() - 6);
+  hoyMedianocheSeisMeses.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
+  const hoyMedianocheSeisMesesISO = hoyMedianocheSeisMeses.toISOString();
 
   const eventosPorZona = await obtenerTodoPorZona(
-    fechaInicioDeHoyISO,
+    hoyMedianocheSeisMesesISO,
     fechaActualISO
   );
 
   /* AGREGANDO FUENTE DE INGRESO */
   const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
-    fechaInicioDeHoyISO,
+    hoyMedianocheSeisMesesISO,
     fechaActualISO
   );
 
@@ -235,12 +236,13 @@ const horaFinalPorZona = document.getElementById("horaFinalPorZona");
 horaInicioPorZona.addEventListener("change", async (e) => {
   // Obtener la hora actual en formato ISO
   const fechaActualISO = new Date().toISOString();
-  // Obtener la hora de hoy a las 00:00 horas en formato ISO
-  const hoyMedianoche = new Date();
-  hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
-  const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
+  // Obtener la fecha hace 6 meses a las 00:00 formato ISO
+  const hoyMedianocheSeisMeses = new Date();
+  hoyMedianocheSeisMeses.setMonth(hoyMedianocheSeisMeses.getMonth() - 6);
+  hoyMedianocheSeisMeses.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
+  const hoyMedianocheSeisMesesISO = hoyMedianocheSeisMeses.toISOString();
 
-  const horaInicio = horaInicioPorZona.value || fechaInicioDeHoyISO;
+  const horaInicio = horaInicioPorZona.value || hoyMedianocheSeisMesesISO;
   const horaFin = horaFinalPorZona.value || fechaActualISO;
 
   const horaInicioIso = new Date(horaInicio).toISOString();
@@ -341,12 +343,13 @@ horaInicioPorZona.addEventListener("change", async (e) => {
 horaFinalPorZona.addEventListener("change", async (e) => {
   // Obtener la hora actual en formato ISO
   const fechaActualISO = new Date().toISOString();
-  // Obtener la hora de hoy a las 00:00 horas en formato ISO
-  const hoyMedianoche = new Date();
-  hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
-  const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
 
-  const horaInicio = horaInicioPorZona.value || fechaInicioDeHoyISO;
+  // Obtener la fecha hace 6 meses a las 00:00 formato ISO
+  const hoyMedianocheSeisMeses = new Date();
+  hoyMedianocheSeisMeses.setMonth(hoyMedianocheSeisMeses.getMonth() - 6);
+  hoyMedianocheSeisMeses.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
+  const hoyMedianocheSeisMesesISO = hoyMedianocheSeisMeses.toISOString();
+  const horaInicio = horaInicioPorZona.value || hoyMedianocheSeisMesesISO;
   const horaFin = horaFinalPorZona.value || fechaActualISO;
 
   const horaInicioIso = new Date(horaInicio).toISOString();
