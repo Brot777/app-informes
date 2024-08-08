@@ -843,7 +843,9 @@ export const colonias = {
     "SANTA ISABEL": ["SANTA ISABEL"],
     "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
   },
-  "ZONA 2 MX": {},
+  "ZONA 2 MX": {
+    "EL TESORO": ["TESORO"],
+  },
   "ZONA 3 MX": {},
   "ZONA 4 MX": {},
   "VILLA NUEVA": {
