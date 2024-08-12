@@ -258,7 +258,11 @@ export const colonias = {
     "CASTILLO LARA": ["CASTILLO LARA"],
     CENTROAMERICA: ["CENTROAMERICA", "CENTRO AMERICA", "C AMERICA"],
     "CIUDAD DE PLATA": ["CIUDAD DE PLATA"],
-    "CIUDAD DE PLATA I": ["CIUDAD DE PLATA I", "CIUDAD DE PLATA 1"],
+    "CIUDAD DE PLATA I": [
+      "CIUDAD DE PLATA I",
+      "CIUDAD DE PLATA 1",
+      "ciudad plata I",
+    ],
     "CIUDAD DE PLATA II": [
       "CIUDAD DE PLATA II",
       "CIUDAD DE PLATA 2",
