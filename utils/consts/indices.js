@@ -319,6 +319,7 @@ export const colonias = {
     ],
     "VILLA LINDA III": ["VILLA LINDA III", "VILLA LINDA 3"],
     RANCHERIA: ["RANCHERIA"],
+    "NIÑO DORMIDO": ["NIÑO DORMIDO"],
   },
   "ZONA 8": {
     "CANTON GUARDA VIEJO": ["CANTON GUARDA VIEJO", "GUARDA VIEJO"],
