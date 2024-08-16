@@ -237,7 +237,7 @@ export const colonias = {
   "ZONA 7": {
     "4 DE FEBRERO": ["4 DE FEBRERO"],
     "6 DE OCTUBRE": ["6 DE OCTUBRE"],
-    ALTAMIRA: ["ALTAMIRA"],
+    "ALTAMIRA I": ["ALTAMIRA I", "ALTAMIRA 1", "ALTA MIRA 1"],
     "ALTAMIRA II": ["ALTAMIRA II", "ALTAMIRA 2", "ALTA MIRA 2"],
     BETHANIA: ["BETHANIA"],
     AMPARO: ["AMPARO"],
