@@ -262,11 +262,13 @@ export const colonias = {
       "CIUDAD DE PLATA I",
       "CIUDAD DE PLATA 1",
       "ciudad plata I",
+      "ciudad plata 1",
     ],
     "CIUDAD DE PLATA II": [
       "CIUDAD DE PLATA II",
       "CIUDAD DE PLATA 2",
       "CIUDAD PLATA II",
+      "CIUDAD PLATA 2",
     ],
     "EL PEDREGAL": ["EL PEDREGAL"],
     "EL RODEO": ["EL RODEO", "RODEO"],

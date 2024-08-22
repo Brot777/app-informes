@@ -1,5 +1,37 @@
 import { fuentesDeIngreso, parametroZona } from "../consts/indices.js";
 
+export const obtenerTodo = async (horaInicio, horaFinal) => {
+  const arrayZonas = Object.keys(parametroZona);
+  const horaInicioConMargenOBj = new Date(horaInicio);
+  horaInicioConMargenOBj.setDate(horaInicioConMargenOBj.getDate() - 1);
+  const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
+
+  const responseTodas = await fetch(
+    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3401&transfer=0&isFilter=true&customer=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
+    {
+      headers: {
+        Accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzA5OTA4NjY1LCJleHAiOjE3MjU0NjA2NjV9.I3VHi5X32IC2n9gt4yeBki97ZJJ3wYcN8K4ychl5NAw",
+      },
+    }
+  );
+
+  const todosLosEventos = await responseTodas.json();
+  console.log(todosLosEventos);
+
+  const fechaInicialObj = new Date(horaInicio);
+  const fechaFinalObj = new Date(horaFinal);
+  const arrayEventos = arrayEventosData.map((eventoData) =>
+    eventoData.data.tasks.filter((evento) => {
+      const fechaActual = new Date(evento.createdAt);
+      return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
+    })
+  );
+
+  return arrayEventos;
+};
+
 export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
   const arrayZonas = Object.keys(parametroZona);
   const horaInicioConMargenOBj = new Date(horaInicio);
