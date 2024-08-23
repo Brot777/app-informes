@@ -427,6 +427,7 @@ export const colonias = {
       "VILLALOBOS 1",
       "Villalobos |",
       "VILLA LOBOS",
+      "VILLALOBOS",
       "villlalobos 1",
     ],
     "VILLA LOBOS 2": [
@@ -902,6 +903,7 @@ export const colonias = {
       "VILLALOBOS 1",
       "Villalobos |",
       "VILLA LOBOS",
+      "VILLALOBOS",
       "villlalobos 1",
     ],
     "VILLA LOBOS 2": [
