@@ -205,6 +205,7 @@ export const colonias = {
     MARTINICO: ["MARTINICO"],
     "MARTINICO 1": ["MARTINICO 1", "MARTINICO I"],
     "MARTINICO 2": ["MARTINICO 2", "MARTINICO II"],
+    NORUEGA: ["NORUEGA"],
     "PROYECTO 4-10": [
       "PROYECTO 4-10",
       "PROYECTOS 4-10",
