@@ -178,6 +178,7 @@ export const colonias = {
     VIVIBIEN: ["VIVIBIEN"],
     "LOURDES 1": ["Lourdes i", "Lourdes 1"],
     "EL ESFUERZO": ["EL ESFUERZO"],
+    SARAVIA: ["SARAVIA"],
   },
   "ZONA 6": {
     "30 DE JUNIO": ["30 DE JUNIO"],
