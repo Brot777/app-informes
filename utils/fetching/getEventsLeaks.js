@@ -2,12 +2,13 @@ import { fuentesDeIngreso, parametroZona } from "../consts/indices.js";
 
 export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
   const arrayZonas = Object.keys(parametroZona);
-  const horaInicioConMargenOBj = new Date(horaInicio);
-  horaInicioConMargenOBj.setDate(horaInicioConMargenOBj.getDate() - 1);
-  const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
+  /* Margen */
+  const horaFinalConMargenOBj = new Date(horaFinal);
+  horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 2);
+  const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
   const arrayPromisesResponses = arrayZonas.map((parametro) => {
     return fetch(
-      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3400&transfer=0&customs[55][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
+      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskType=3400&transfer=0&customs[55][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
       {
         headers: {
           Accept: "application/json",
@@ -24,7 +25,7 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
     response.json()
   );
   const arrayEventosData = await Promise.all(arrayPromisesEventos);
-
+  console.log(arrayEventosData);
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
   const arrayEventos = arrayEventosData.map((eventoData) =>
@@ -39,13 +40,13 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
 
 export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
   const arrayFuentesDeIngreso = Object.keys(fuentesDeIngreso);
-  const horaInicioConMargenOBj = new Date(horaInicio);
-  horaInicioConMargenOBj.setDate(horaInicioConMargenOBj.getDate() - 1);
-  const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
-  console.log(horaInicioConMargenString);
+  /* Margen */
+  const horaFinalConMargenOBj = new Date(horaFinal);
+  horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 2);
+  const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
   const arrayPromisesResponses = arrayFuentesDeIngreso.map((parametro) => {
     return fetch(
-      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3400&transfer=0&customs[56][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
+      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskType=3400&transfer=0&customs[56][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
 
       {
         headers: {
