@@ -547,7 +547,7 @@ export const colonias = {
     "CASA BELLA": ["CASA BELLA"],
     CASATENANGO: ["CASATENANGO", "Casatenago", "Casatengo"],
     "COLEGIO DE MAESTROS": ["COLEGIO DE MAESTROS", "MAESTROS"],
-    COVITIGSS: ["COVITIGSS", "COVITIGGS"],
+    COVITIGSS: ["COVITIGSS", "COVITIGGS", "covitiggs"],
     "EL ACEITUNO": ["EL ACEITUNO"],
     "EL BEBEDERO": ["EL BEBEDERO"],
     "EL CARMEN": ["EL CARMEN"],
