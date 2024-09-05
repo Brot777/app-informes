@@ -45,7 +45,7 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
         headers: {
           Accept: "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NDY0NDE4LCJleHAiOjE3NDEwMTY0MTh9.GyugY_Cib3djzmIOHqjOgEn5zs6YiwBE4BCl6fqkaww",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NTQ1MjY2LCJleHAiOjE3NDEwOTcyNjZ9.3RCwLGdlwM2Qi5oZc67yz-zh_gAI4mcatFQrd8-GTgc",
         },
       }
     );
@@ -84,7 +84,7 @@ export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
         headers: {
           Accept: "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NDY0NDE4LCJleHAiOjE3NDEwMTY0MTh9.GyugY_Cib3djzmIOHqjOgEn5zs6YiwBE4BCl6fqkaww",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NTQ1MjY2LCJleHAiOjE3NDEwOTcyNjZ9.3RCwLGdlwM2Qi5oZc67yz-zh_gAI4mcatFQrd8-GTgc",
         },
       }
     );
