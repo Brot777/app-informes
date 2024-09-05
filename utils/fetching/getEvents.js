@@ -7,7 +7,7 @@ export const obtenerTodo = async (horaInicio, horaFinal) => {
   const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
 
   const responseTodas = await fetch(
-    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3401&transfer=0&isFilter=true&customer=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
+    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3401&transfer=0&isFilter=true&customerId=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
     {
       headers: {
         Accept: "application/json",

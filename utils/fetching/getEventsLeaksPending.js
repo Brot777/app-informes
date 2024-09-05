@@ -8,7 +8,7 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
   const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
   const arrayPromisesResponses = arrayZonas.map((parametro) => {
     return fetch(
-      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskStatus[]=3528&taskType=3400&transfer=0&customs[55][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
+      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskStatus[]=3528&taskType=3400&transfer=0&customs[55][0]=${parametro}&customerId=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
       {
         headers: {
           Accept: "application/json",
@@ -44,7 +44,7 @@ export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
   const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
   const arrayPromisesResponses = arrayFuentesDeIngreso.map((parametro) => {
     return fetch(
-      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskStatus[]=3528&taskType=3400&transfer=0&customs[56][0]=${parametro}&customer=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
+      `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskStatus[]=3528&taskType=3400&transfer=0&customs[56][0]=${parametro}&customerId=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
 
       {
         headers: {
