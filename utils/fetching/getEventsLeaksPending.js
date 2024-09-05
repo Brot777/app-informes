@@ -13,7 +13,7 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
         headers: {
           Accept: "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NDY0NDE4LCJleHAiOjE3NDEwMTY0MTh9.GyugY_Cib3djzmIOHqjOgEn5zs6YiwBE4BCl6fqkaww",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgxOSwiaWF0IjoxNzI1NTQzNzg5LCJleHAiOjE3NDEwOTU3ODl9.rR-jRGkX3wCRfDwigWta0Egg9B2zZ_WnOmkAmewm_KY",
         },
       }
     );
@@ -50,7 +50,7 @@ export const obtenerTodoPorFuenteDeIngreso = async (horaInicio, horaFinal) => {
         headers: {
           Accept: "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NDY0NDE4LCJleHAiOjE3NDEwMTY0MTh9.GyugY_Cib3djzmIOHqjOgEn5zs6YiwBE4BCl6fqkaww",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgxOSwiaWF0IjoxNzI1NTQzNzg5LCJleHAiOjE3NDEwOTU3ODl9.rR-jRGkX3wCRfDwigWta0Egg9B2zZ_WnOmkAmewm_KY",
         },
       }
     );
