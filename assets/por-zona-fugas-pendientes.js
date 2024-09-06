@@ -11,8 +11,9 @@ import {
 } from "../utils/fetching/getEventsLeaksPending.js";
 import {
   convertirFechaISOaDDMMAAAAHHMM,
-  convertirFechaISOaHoraFecha,
+  convertirHora,
   obtenerAño,
+  obtenerCorrelativoFecha,
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
@@ -530,8 +531,6 @@ document
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = `reporte_fugas_pendientes-${convertirFechaISOaHoraFecha(
-      new Date()
-    )}.pdf`;
+    link.download = `${obtenerCorrelativoFecha()}_Reporte_Fugas_Pendientes-${convertirHora()}.pdf`;
     link.click();
   });

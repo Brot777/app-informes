@@ -6,6 +6,7 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
   const horaFinalConMargenOBj = new Date(horaFinal);
   horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 2);
   const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
+
   const arrayPromisesResponses = arrayZonas.map((parametro) => {
     return fetch(
       `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskType=3400&transfer=0&customs[55][0]=${parametro}&customerId=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
@@ -25,7 +26,6 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
     response.json()
   );
   const arrayEventosData = await Promise.all(arrayPromisesEventos);
-  console.log(arrayEventosData);
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
   const arrayEventos = arrayEventosData.map((eventoData) =>

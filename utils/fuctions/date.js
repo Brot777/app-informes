@@ -17,23 +17,32 @@ export const convertirFechaISOaDDMMAAAAHHMM = (fechaISO) => {
   return fechaFormateada;
 };
 
-export const convertirFechaISOaHoraFecha = (fechaISO) => {
-  let fecha = new Date(fechaISO);
-  let mes = fecha.getMonth() + 1; // Los meses en JavaScript van de 0 a 11, así que sumamos 1
-  let dia = fecha.getDate();
-  let año = fecha.getFullYear();
+export const convertirHora = () => {
+  let fecha = new Date();
+
   let horas = fecha.getHours();
   let minutos = fecha.getMinutes();
 
   // Asegurarse de que los valores de mes, día, hora y minuto tengan dos dígitos
-  mes = mes < 10 ? "0" + mes : mes;
-  dia = dia < 10 ? "0" + dia : dia;
   horas = horas < 10 ? "0" + horas : horas;
   minutos = minutos < 10 ? "0" + minutos : minutos;
 
-  let fechaFormateada =
-    "HORA"+"_"+ horas+"_" + minutos + "-"+"FECHA"+"_" +dia+"-"+ mes + "-" + año ;
+  let fechaFormateada = "HORA" + "_" + horas + "_" + minutos;
   return fechaFormateada;
+};
+export const obtenerCorrelativoFecha = () => {
+  let fecha = new Date();
+  let mes = fecha.getMonth() + 1; // Los meses en JavaScript van de 0 a 11, así que sumamos 1
+  let dia = fecha.getDate();
+  let año = fecha.getFullYear();
+
+  // Asegurarse de que los valores de mes, día, hora y minuto tengan dos dígitos
+  mes = mes < 10 ? "0" + mes : mes;
+  dia = dia < 10 ? "0" + dia : dia;
+
+  let correlativo = año + mes + dia;
+
+  return correlativo;
 };
 
 export const obtenerDia = (fechaISO) => {

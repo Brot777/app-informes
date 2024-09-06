@@ -11,8 +11,9 @@ import {
 } from "../utils/fetching/getEvents.js";
 import {
   convertirFechaISOaDDMMAAAAHHMM,
-  convertirFechaISOaHoraFecha,
+  convertirHora,
   obtenerAño,
+  obtenerCorrelativoFecha,
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
@@ -527,8 +528,6 @@ document
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = `reporte_falta_de_agua-${convertirFechaISOaHoraFecha(
-      new Date()
-    )}.pdf`;
+    link.download = `${obtenerCorrelativoFecha()}_Reporte_Falta_De_Agua-${convertirHora()}.pdf`;
     link.click();
   });
