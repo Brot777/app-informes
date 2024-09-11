@@ -839,7 +839,7 @@ export const colonias = {
       "Callejón Iglesia",
       "iglesia Mormona",
     ],
-    "EL CRUCIFIJO": ["EL CRUCIFICO"],
+    "EL CRUCIFIJO": ["EL CRUCIFIJO"],
     "ENTRADA AL BUEN PASTOR": ["ENTRADA AL BUEN PASTOR", "BUEN PASTOR"],
     "LA CATARATA/ENTRADA AL BUEN PASTOR": [
       "LA CATARATA ENTRADA AL BUEN PASTOR",
