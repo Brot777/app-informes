@@ -600,7 +600,7 @@ export const colonias = {
     "ASENTAMIENTO ANEXO KENNEDY": ["ASENTAMIENTO ANEXO KENNEDY", "KENNEDY"],
     "ASENTAMIENTO BELICE": ["ASENTAMIENTO BELICE"],
     ASENTAMIENTO: ["ASENTAMIENTO"],
-    "RUTA AL ATLÁNTICO": ["RUTA AL ATLÁNTICO"],
+    "LA CASCADA": ["LA CASCADA"],
     "RESIDENCIALES ATLÁNTICO": [
       "residenciales Atlantico",
       "res. atlantico",
