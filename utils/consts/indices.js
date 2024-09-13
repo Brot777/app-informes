@@ -310,9 +310,14 @@ export const colonias = {
     "SAN MARTIN DE PORRES": ["SAN MARTIN DE PORRES", "SAN MARTIN", "DE PORRES"],
     "SANTA ELENA 1": ["SANTA ELENA 1", "SANTA ELENA I", "SANTA ELENA"],
     "TECUN UMAN": ["TECUN UMAN", "TECUN"],
-    "TIKAL I": ["TIKAL I", "TIKAL 1"],
-    "TIKAL II": ["TIKAL II", "TIKAL 2"],
-    "TIKAL III": ["TIKAL III", "TIKAL 3"],
+    "TIKAL I": [
+      "Jardines de Tikal 1",
+      "Jardines de Tikal",
+      "TIKAL I",
+      "TIKAL 1",
+    ],
+    "TIKAL II": ["Jardines de Tikal 2", "TIKAL II", "TIKAL 2"],
+    "TIKAL III": ["Jardines de Tikal 3", "TIKAL III", "TIKAL 3"],
     TOLEDO: ["TOLEDO"],
     "UTATLAN I": ["UTATLAN I", "UTATLAN 1", "UTATLAN", "UTATALAN"],
     "VILLA LINDA II": [
