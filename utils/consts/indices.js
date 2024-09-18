@@ -852,7 +852,7 @@ export const colonias = {
     ],
     "LA ESPERANZA": ["LA ESPERANZA"],
     "LA PEÑA": ["LA PEÑA"],
-    "LO DE RODRÍGUEZ ": ["LO DE RODRÍGUEZ ", "DE RODRÍGUEZ "],
+    "LO DE RODRÍGUEZ ": ["LO DE RODRÍGUEZ", "DE RODRÍGUEZ", "Lo de Rosdríguez"],
     "RAFAEL CASTRO": ["RAFAEL CASTRO"],
     "SAN AGUSTÍN": ["SAN AGUSTÍN"],
     "SANTA ANITA": ["SANTA ANITA"],
