@@ -612,6 +612,7 @@ export const colonias = {
       "res. atlantico",
       "RESIDENCIALES DE ATLANTICO",
       "Residenciales EL ATLANTICO",
+      "residenciales. El atlantico",
     ],
     ATLÁNTIDA: ["ATLÁNTIDA"],
     "RESIDENCIALES ATLANTIDA": ["RESIDENCIALES ATLANTIDA", "RES. ATLANTIDA"],
