@@ -12,23 +12,50 @@ export const obtenerTodo = async (horaInicio, horaFinal) => {
       headers: {
         Accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzA5OTA4NjY1LCJleHAiOjE3MjU0NjA2NjV9.I3VHi5X32IC2n9gt4yeBki97ZJJ3wYcN8K4ychl5NAw",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NTQ1MjY2LCJleHAiOjE3NDEwOTcyNjZ9.3RCwLGdlwM2Qi5oZc67yz-zh_gAI4mcatFQrd8-GTgc",
       },
     }
   );
 
   const todosLosEventos = await responseTodas.json();
-  console.log(todosLosEventos);
 
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
-  const arrayEventos = arrayEventosData.map((eventoData) =>
-    eventoData.data.tasks.filter((evento) => {
-      const fechaActual = new Date(evento.createdAt);
-      return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
-    })
-  );
+  const arrayEventos = todosLosEventos.data.tasks.filter((evento) => {
+    const fechaActual = new Date(evento.createdAt);
+    return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
+  });
+  const agregarFuenteYZona = (arrayEventos) => {
+    const ecentosConZona = arrayEventos.map((evento) => {
+      console.log(evento);
+    });
+  };
+  /* 
+  const agruparPorZona = (arrayEventos) => {
+    // Objeto para agrupar ciudades por estado
+    const agrupadoPorEstado = {};
 
+    // Recorremos el array de ciudades
+    ciudades.forEach((ciudad) => {
+      const { estado } = ciudad;
+
+      // Si el estado no existe en el objeto, lo creamos como array vacío
+      if (!agrupadoPorEstado[estado]) {
+        agrupadoPorEstado[estado] = [];
+      }
+
+      // Agregamos la ciudad a su respectivo estado
+      agrupadoPorEstado[estado].push(ciudad);
+    });
+
+    // Convertimos el objeto en un array de arrays de ciudades
+    return Object.values(agrupadoPorEstado);
+  };
+
+  const eventosAgrupados = agruparPorZona(arrayEventos); */
+
+  console.log(arrayEventos);
+  console.log(arrayEventos);
   return arrayEventos;
 };
 

@@ -6,6 +6,7 @@ import {
   parametroZona,
 } from "../utils/consts/indices.js";
 import {
+  obtenerTodo,
   obtenerTodoPorFuenteDeIngreso,
   obtenerTodoPorZona,
 } from "../utils/fetching/getEvents.js";
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     fechaInicioDeHoyISO,
     fechaActualISO
   );
-
+  /*  obtenerTodo(fechaInicioDeHoyISO, fechaActualISO); */
   const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
 
   const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
