@@ -485,8 +485,8 @@ export const colonias = {
   "ZONA 15": {
     "CIUDAD VIEJA I": ["CIUDAD VIEJA I", "CIUDAD VIEJA 1"],
     "EL MAESTRO": ["EL MAESTRO"],
-    "EL MAESTRO I": ["EL MAESTRO I", "EL MAESTRO 1"],
-    "EL MAESTRO II": ["EL MAESTRO II", "EL MAESTRO 2"],
+    "EL MAESTRO I": ["MAESTRO I", "MAESTRO 1"],
+    "EL MAESTRO II": ["MAESTRO II", "MAESTRO 2"],
     "EL REFUGIO II": ["EL REFUGIO II", "EL REFUGIO 2"],
     "JARDINES DE MINERVA": [
       "JARDINES DE MINERVA",
@@ -636,6 +636,11 @@ export const colonias = {
       "MIRADOR-ILUSIONES",
       "MIRADOR",
     ],
+    "LO DE RODRÍGUEZ": [
+      "LO DE RODRÍGUEZ",
+      "LO DE RODRIGUES",
+      "Lo de Rosdríguez",
+    ],
     "EL PORVENIR/LO DE RODRIGUEZ": [
       "EL PORVENIR LO DE RODRIGUEZ",
       "EL PORVENIR",
@@ -667,11 +672,7 @@ export const colonias = {
     "LAS ILUSIONES": ["LAS ILUSIONES", "ILUCIONES"],
     "LAS TAPIAS": ["LAS TAPIAS"],
     LAVARREDA: ["LAVARREDA", "LA BARREDA", "LA BARRERRA", "la varreda"],
-    "LO DE RODRÍGUEZ": [
-      "LO DE RODRÍGUEZ",
-      "LO DE RODRIGUES",
-      "Lo de Rosdríguez",
-    ],
+
     "LOMAS DE LAVARREDA": [
       "LOMAS DE LAVARREDA",
       "LOMAS DE LA BARRERA",

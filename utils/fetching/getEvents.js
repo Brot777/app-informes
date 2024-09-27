@@ -1,13 +1,68 @@
 import { fuentesDeIngreso, parametroZona } from "../consts/indices.js";
+import { estaMarcaMedidorEnDescripcion } from "../fuctions/obtenerCampo.js";
+
+const agregarFuenteYZona = (arrayEventos) => {
+  const initialArraysTodosPorZona = {
+    1397: [],
+    1398: [],
+    1399: [],
+    1400: [],
+    1401: [],
+    1402: [],
+    1403: [],
+    1404: [],
+    1405: [],
+    1406: [],
+    1407: [],
+    1408: [],
+    1409: [],
+    1410: [],
+    1411: [],
+    1412: [],
+    1413: [],
+    1414: [],
+    1415: [],
+    1416: [],
+    1417: [],
+    1418: [],
+    1419: [],
+    1499: [],
+    1500: [],
+    1501: [],
+  };
+  arrayEventos.forEach((evento) => {
+    let valueCustomZona;
+    let valueFuenteDeIngreso = "Alcaldia Auxiliar";
+    let eventoModificado = { ...evento };
+
+    /* VALIDAR SI ES FUENTE VERIFICACION */
+    estaMarcaMedidorEnDescripcion(evento.description) &&
+      (valueFuenteDeIngreso = "Verificación");
+
+    evento.TaskCustomFields.forEach((customField) => {
+      initialArraysTodosPorZona[customField.value] &&
+        (valueCustomZona = customField.value);
+      fuentesDeIngreso[customField.value] &&
+        (valueFuenteDeIngreso = fuentesDeIngreso[customField.value]);
+    });
+    eventoModificado.fuenteDeIngreso = valueFuenteDeIngreso;
+
+    valueCustomZona
+      ? initialArraysTodosPorZona[valueCustomZona].push(eventoModificado)
+      : console.log(evento);
+  });
+  console.log(Object.values(initialArraysTodosPorZona).length);
+  return Object.values(initialArraysTodosPorZona);
+};
 
 export const obtenerTodo = async (horaInicio, horaFinal) => {
-  const arrayZonas = Object.keys(parametroZona);
-  const horaInicioConMargenOBj = new Date(horaInicio);
-  horaInicioConMargenOBj.setDate(horaInicioConMargenOBj.getDate() - 1);
-  const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
+  /* Margen */
+  const horaFinalConMargenOBj = new Date(horaFinal);
+  horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 2);
+  const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
 
   const responseTodas = await fetch(
-    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3401&transfer=0&isFilter=true&customerId=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
+    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskType=3401&transfer=0&isFilter=true&customerId=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
     {
       headers: {
         Accept: "application/json",
@@ -25,38 +80,12 @@ export const obtenerTodo = async (horaInicio, horaFinal) => {
     const fechaActual = new Date(evento.createdAt);
     return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
   });
-  const agregarFuenteYZona = (arrayEventos) => {
-    const ecentosConZona = arrayEventos.map((evento) => {
-      console.log(evento);
-    });
-  };
-  /* 
-  const agruparPorZona = (arrayEventos) => {
-    // Objeto para agrupar ciudades por estado
-    const agrupadoPorEstado = {};
 
-    // Recorremos el array de ciudades
-    ciudades.forEach((ciudad) => {
-      const { estado } = ciudad;
+  const eventosConZona = agregarFuenteYZona(arrayEventos);
 
-      // Si el estado no existe en el objeto, lo creamos como array vacío
-      if (!agrupadoPorEstado[estado]) {
-        agrupadoPorEstado[estado] = [];
-      }
+  console.log(eventosConZona);
 
-      // Agregamos la ciudad a su respectivo estado
-      agrupadoPorEstado[estado].push(ciudad);
-    });
-
-    // Convertimos el objeto en un array de arrays de ciudades
-    return Object.values(agrupadoPorEstado);
-  };
-
-  const eventosAgrupados = agruparPorZona(arrayEventos); */
-
-  console.log(arrayEventos);
-  console.log(arrayEventos);
-  return arrayEventos;
+  return eventosConZona;
 };
 
 export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
@@ -93,6 +122,7 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
       return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
     })
   );
+  console.log(arrayEventos);
 
   return arrayEventos;
 };
