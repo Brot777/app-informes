@@ -58,7 +58,7 @@ const agregarFuenteYZona = (arrayEventos) => {
 export const obtenerTodo = async (horaInicio, horaFinal) => {
   /* Margen */
   const horaFinalConMargenOBj = new Date(horaFinal);
-  horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 2);
+  horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 365);
   const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
 
   const responseTodas = await fetch(
