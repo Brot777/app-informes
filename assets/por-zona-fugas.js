@@ -1,7 +1,6 @@
 import {
   Regiones,
   colonias,
-  fuentesDeIngreso,
   idsSubtipoDeTarea,
   parametroZona,
 } from "../utils/consts/indices.js";
@@ -14,10 +13,7 @@ import {
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
-import {
-  encontrarColoniaEnDescripcion,
-  estaMarcaMedidorEnDescripcion,
-} from "../utils/fuctions/obtenerCampo.js";
+import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
 import { escapeNewlines } from "./fuctionsPorZona.js";
 
 /* VARIABLES GENERALES */
