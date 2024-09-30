@@ -877,6 +877,7 @@ export const colonias = {
   },
   "ZONA 2 MX": {
     "EL TESORO": ["TESORO"],
+    COTIO: ["COTIO"],
   },
   "ZONA 3 MX": {},
   "ZONA 4 MX": {},
