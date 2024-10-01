@@ -256,6 +256,7 @@ export const colonias = {
       "BOSQUES DE LINDA VILLA",
       "BOSQUES DE VILLA LINDA",
       "BOSQUES DE LINA VILLA",
+      "bosque de linda villa",
     ],
     "CASTILLO LARA": ["CASTILLO LARA"],
     CENTROAMERICA: ["CENTROAMERICA", "CENTRO AMERICA", "C AMERICA"],
