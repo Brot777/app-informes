@@ -351,7 +351,7 @@ export const colonias = {
     "BARRIO LA VILLA": ["BARRIO LA VILLA", "LA VILLA"],
     CONCEPCIÓN: ["CONCEPCIÓN"],
     "EL PILAR": ["EL PILAR", "PILAR"],
-    OAKLAND: ["OAKLAND", "OKLAN"],
+    OAKLAND: ["OAKLAND", "OKLAN", "oackland"],
   },
   "ZONA 11": {
     CARABANCHEL: ["CARABANCHEL", "carabache", "carabachel", "CARABANCHE"],
