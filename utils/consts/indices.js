@@ -655,7 +655,6 @@ export const colonias = {
     "EL PORVENIR/LO DE RODRIGUEZ": [
       "EL PORVENIR LO DE RODRIGUEZ",
       "EL PORVENIR",
-      "LO DE RODRIGUEZ",
     ],
     "EL RINCONCITO": ["EL RINCONCITO"],
     "EL ROSARIO": ["EL ROSARIO", "ROSARIO"],
