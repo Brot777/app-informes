@@ -325,6 +325,12 @@ export const colonias = {
     "TIKAL III": ["Jardines de Tikal 3", "TIKAL III", "TIKAL 3"],
     TOLEDO: ["TOLEDO"],
     "UTATLAN I": ["UTATLAN I", "UTATLAN 1", "UTATLAN", "UTATALAN"],
+    "VILLA LINDA I": [
+      "VILLA LINDA I",
+      "VILLA LINDA 1",
+      "LINDA VILLA I",
+      "LINDA VILLA 1",
+    ],
     "VILLA LINDA II": [
       "VILLA LINDA II",
       "VILLA LINDA 2",
@@ -476,7 +482,7 @@ export const colonias = {
   },
   "ZONA 14": {
     "CANTON 21": ["CANTON 21"],
-    "CANTON VICTORIA": ["CANTON VICTORIA"],
+    "CANTON VICTORIA": ["CANTON VICTORIA", "VICTORIA"],
     "COLONIA EL CAMPO": ["COLONIA EL CAMPO", "EL CAMPO", "CAMPO"],
     "COND. LAS VICTORIAS": [
       "COND. LAS VICTORIAS",
