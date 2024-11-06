@@ -535,6 +535,7 @@ export const colonias = {
     "FUENTES I": ["FUENTES I", "FUENTES 1"],
     "HACIENDA REAL": ["HACIENDA REAL", "HACIENDA"],
     "KANAJUYU I": ["KANAJUYU I", "KANAJUYU 1", "Calajuyu 1"],
+    "KANAJUYU II": ["KANAJUYU II", "KANAJUYU 2", "Calajuyu 2"],
     "LA MONTAÑA": ["LA MONTAÑA", "MONTAÑA"],
     "LAS MERCEDES": ["LAS MERCEDES"],
     "LAS VACAS": ["LAS VACAS"],
