@@ -453,12 +453,14 @@ export const colonias = {
       "VILLA LOBOS II",
       "VILLALOBOS II",
       "VILLALOBOS 2",
+      "VILLA LOBOS DOS",
     ],
     "VILLA LOBOS 3": [
       "VILLA LOBOS 3",
       "VILLA LOBOS III",
       "VILLALOBOS III",
-      "VILLALOBOS #",
+      "VILLALOBOS 3",
+      "VILLALOBOS TRES",
     ],
   },
   "ZONA 13": {
@@ -941,12 +943,14 @@ export const colonias = {
       "VILLA LOBOS II",
       "VILLALOBOS II",
       "VILLALOBOS 2",
+      "VILLA LOBOS DOS",
     ],
     "VILLA LOBOS 3": [
       "VILLA LOBOS 3",
       "VILLA LOBOS III",
       "VILLALOBOS III",
-      "VILLALOBOS #",
+      "VILLALOBOS 3",
+      "VILLALOBOS TRES",
     ],
   },
 };
