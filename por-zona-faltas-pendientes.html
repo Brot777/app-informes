@@ -10,7 +10,7 @@
     <!-- BOOTSTRAP MIN-->
     <link rel="stylesheet" href="./assets/bootsrap/bootstrap.min.css" />
 
-    <title>Informe-Fugas-Pendientes</title>
+    <title>Informe-Faltas-Pendientes</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,7 +42,10 @@
               <a class="nav-link" href="/por-zona.html">Faltas Por Zona</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/por-zona-faltas-pendientes.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/por-zona-faltas-pendientes.html"
                 >Faltas Pendientes</a
               >
             </li>
@@ -50,13 +53,11 @@
               <a class="nav-link" href="/por-zona-fugas.html">Fugas Por Zona</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/por-zona-fugas-pendientes.html"
+              <a class="nav-link" href="/por-zona-fugas-pendientes.html"
                 >Fugas Pendientes</a
               >
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="/resumen.html">Resumen</a>
             </li>
@@ -131,7 +132,7 @@
     ></script>
     <script src="https://unpkg.com/pdf-lib"></script>
     <!-- SCRIPS -->
-    <script src="./assets/por-zona-fugas-pendientes.js" type="module"></script>
+    <script src="./assets/por-zona-faltas-pendientes.js" type="module"></script>
     <script>
       function ordenarColumnaTexto(index, numberTable) {
         var tabla, filas, cambio, i, x, y, debeCambiar;
