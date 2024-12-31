@@ -40,7 +40,7 @@ export const obtenerCorrelativoFecha = () => {
   mes = mes < 10 ? "0" + mes : mes;
   dia = dia < 10 ? "0" + dia : dia;
 
-  let correlativo = `${año}${mes}${dia}`;
+  let correlativo = año + mes + dia;
 
   return correlativo;
 };

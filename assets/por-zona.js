@@ -1,10 +1,14 @@
 import {
   Regiones,
   colonias,
+  fuentesDeIngreso,
   idsSubtipoDeTarea,
   parametroZona,
 } from "../utils/consts/indices.js";
-import { obtenerTodo } from "../utils/fetching/getEvents.js";
+import {
+  obtenerTodoPorFuenteDeIngreso,
+  obtenerTodoPorZona,
+} from "../utils/fetching/getEvents.js";
 import {
   convertirFechaISOaDDMMAAAAHHMM,
   convertirHora,
@@ -13,8 +17,11 @@ import {
   obtenerDia,
   obtenerMes,
 } from "../utils/fuctions/date.js";
-import { encontrarColoniaEnDescripcion } from "../utils/fuctions/obtenerCampo.js";
-import { escapeNewlines } from "./fuctionsPorZona.js";
+import {
+  encontrarColoniaEnDescripcion,
+  estaMarcaMedidorEnDescripcion,
+} from "../utils/fuctions/obtenerCampo.js";
+import { addEventMarker, escapeNewlines } from "./fuctionsPorZona.js";
 
 /* VARIABLES GENERALES */
 let dataGeneral = [];
@@ -28,10 +35,40 @@ document.addEventListener("DOMContentLoaded", async () => {
   hoyMedianoche.setHours(0, 0, 0, 0); // Establecer las horas, minutos, segundos y milisegundos a cero para obtener la medianoche
   const fechaInicioDeHoyISO = hoyMedianoche.toISOString();
 
-  const eventosPorZonaConFuente = await obtenerTodo(
+  const eventosPorZona = await obtenerTodoPorZona(
     fechaInicioDeHoyISO,
     fechaActualISO
   );
+
+  /* AGREGANDO FUENTE DE INGRESO */
+  const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
+    fechaInicioDeHoyISO,
+    fechaActualISO
+  );
+
+  const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
+
+  const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
+    eventosZona.map((evento) => {
+      let fuenteDeIngreso = "";
+      estaMarcaMedidorEnDescripcion(evento.description) &&
+        (fuenteDeIngreso = "Verificación");
+      eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
+        const eventoFind = eventosFuente.find(
+          (eventoF) => eventoF.id == evento.id
+        );
+        eventoFind && (fuenteDeIngreso = arrayNombresFuenteDeIngreso[i]);
+      });
+
+      return {
+        ...evento,
+        fuenteDeIngreso: fuenteDeIngreso
+          ? fuenteDeIngreso
+          : "Alcaldia Auxiliar",
+      };
+    })
+  );
+  /* FIN AGREGANDO FUENTE DE INGRESO */
 
   /* AGREGANDO ZONA VILLA NUEVA */
   const eventosVillaNueva = [];
@@ -146,10 +183,6 @@ export const pintarEventosPorZona = (eventosPorZona) => {
       tr.classList.add("patient-row");
       tr.setAttribute("data-id", task.id);
       tr.setAttribute("id", task.id);
-      tr.addEventListener("click", async (e) => {
-        tr.classList.toggle("table-danger");
-        tr.classList.toggle("table-secondary");
-      });
       tr.innerHTML = `
     <td>${task.id}</td>
     <td>Falta de Agua</td>
@@ -192,7 +225,7 @@ export const pintarEventosPorZona = (eventosPorZona) => {
     card.appendChild(cardBody);
     $containerTables.appendChild(card);
   });
-
+  addEventMarker();
   dataGeneral = dataExportar;
 };
 
@@ -201,7 +234,6 @@ const horaInicioPorZona = document.getElementById("horaInicioPorZona");
 const horaFinalPorZona = document.getElementById("horaFinalPorZona");
 
 horaInicioPorZona.addEventListener("change", async (e) => {
-  const inicio = new Date();
   // Obtener la hora actual en formato ISO
   const fechaActualISO = new Date().toISOString();
   // Obtener la hora de hoy a las 00:00 horas en formato ISO
@@ -214,11 +246,37 @@ horaInicioPorZona.addEventListener("change", async (e) => {
 
   const horaInicioIso = new Date(horaInicio).toISOString();
   const horaFinIso = new Date(horaFin).toISOString();
-  const eventosPorZonaConFuente = await obtenerTodo(horaInicioIso, horaFinIso);
-  const final = new Date();
-  console.log(final - inicio);
 
-  const inici2 = new Date();
+  const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
+
+  const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
+    horaInicioIso,
+    horaFinIso
+  );
+
+  const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
+
+  const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
+    eventosZona.map((evento) => {
+      let fuenteDeIngreso = "";
+      estaMarcaMedidorEnDescripcion(evento.description) &&
+        (fuenteDeIngreso = "Verificación");
+      eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
+        const eventoFind = eventosFuente.find(
+          (eventoF) => eventoF.id == evento.id
+        );
+        eventoFind && (fuenteDeIngreso = arrayNombresFuenteDeIngreso[i]);
+      });
+
+      return {
+        ...evento,
+        fuenteDeIngreso: fuenteDeIngreso
+          ? fuenteDeIngreso
+          : "Alcaldia Auxiliar",
+      };
+    })
+  );
+
   /* AGREGANDO ZONA VILLA NUEVA */
   const eventosVillaNueva = [];
   const eventosSinVillaNueva = [];
@@ -277,14 +335,8 @@ horaInicioPorZona.addEventListener("change", async (e) => {
     ...eventosChinautla,
   ];
   /* FIN REASIGNANDO CHINAUTLA*/
-  const fina2 = new Date();
-  console.log(fina2 - inici2);
-
-  const start = new Date();
 
   pintarEventosPorZona(eventosPorZonaConFuente);
-  const fin = new Date();
-  console.log(fin - start);
 });
 
 horaFinalPorZona.addEventListener("change", async (e) => {
@@ -301,7 +353,35 @@ horaFinalPorZona.addEventListener("change", async (e) => {
   const horaInicioIso = new Date(horaInicio).toISOString();
   const horaFinIso = new Date(horaFin).toISOString();
 
-  const eventosPorZonaConFuente = await obtenerTodo(horaInicioIso, horaFinIso);
+  const eventosPorZona = await obtenerTodoPorZona(horaInicioIso, horaFinIso);
+
+  const eventosPorFuenteDeIngreso = await obtenerTodoPorFuenteDeIngreso(
+    horaInicioIso,
+    horaFinIso
+  );
+
+  const arrayNombresFuenteDeIngreso = Object.values(fuentesDeIngreso);
+
+  const eventosPorZonaConFuente = eventosPorZona.map((eventosZona) =>
+    eventosZona.map((evento) => {
+      let fuenteDeIngreso = "";
+      estaMarcaMedidorEnDescripcion(evento.description) &&
+        (fuenteDeIngreso = "Verificación");
+      eventosPorFuenteDeIngreso.forEach((eventosFuente, i) => {
+        const eventoFind = eventosFuente.find(
+          (eventoF) => eventoF.id == evento.id
+        );
+        eventoFind && (fuenteDeIngreso = arrayNombresFuenteDeIngreso[i]);
+      });
+
+      return {
+        ...evento,
+        fuenteDeIngreso: fuenteDeIngreso
+          ? fuenteDeIngreso
+          : "Alcaldia Auxiliar",
+      };
+    })
+  );
 
   /* AGREGANDO ZONA VILLA NUEVA */
   const eventosVillaNueva = [];

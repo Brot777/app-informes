@@ -1,91 +1,35 @@
 import { fuentesDeIngreso, parametroZona } from "../consts/indices.js";
-import { estaMarcaMedidorEnDescripcion } from "../fuctions/obtenerCampo.js";
-
-const agregarFuenteYZona = (arrayEventos) => {
-  const initialArraysTodosPorZona = {
-    1397: [],
-    1398: [],
-    1399: [],
-    1400: [],
-    1401: [],
-    1402: [],
-    1403: [],
-    1404: [],
-    1405: [],
-    1406: [],
-    1407: [],
-    1408: [],
-    1409: [],
-    1410: [],
-    1411: [],
-    1412: [],
-    1413: [],
-    1414: [],
-    1415: [],
-    1416: [],
-    1417: [],
-    1418: [],
-    1419: [],
-    1499: [],
-    1500: [],
-    1501: [],
-  };
-  arrayEventos.forEach((evento) => {
-    let valueCustomZona;
-    let valueFuenteDeIngreso = "Alcaldia Auxiliar";
-    let eventoModificado = { ...evento };
-
-    /* VALIDAR SI ES FUENTE VERIFICACION */
-    estaMarcaMedidorEnDescripcion(evento.description) &&
-      (valueFuenteDeIngreso = "Verificación");
-
-    evento.TaskCustomFields.forEach((customField) => {
-      initialArraysTodosPorZona[customField.value] &&
-        (valueCustomZona = customField.value);
-      fuentesDeIngreso[customField.value] &&
-        (valueFuenteDeIngreso = fuentesDeIngreso[customField.value]);
-    });
-    eventoModificado.fuenteDeIngreso = valueFuenteDeIngreso;
-
-    valueCustomZona
-      ? initialArraysTodosPorZona[valueCustomZona].push(eventoModificado)
-      : console.log(evento);
-  });
-  console.log(Object.values(initialArraysTodosPorZona).length);
-  return Object.values(initialArraysTodosPorZona);
-};
 
 export const obtenerTodo = async (horaInicio, horaFinal) => {
-  /* Margen */
-  const horaFinalConMargenOBj = new Date(horaFinal);
-  horaFinalConMargenOBj.setDate(horaFinalConMargenOBj.getDate() + 365);
-  const horaFinalConMargenString = horaFinalConMargenOBj.toISOString();
+  const arrayZonas = Object.keys(parametroZona);
+  const horaInicioConMargenOBj = new Date(horaInicio);
+  horaInicioConMargenOBj.setDate(horaInicioConMargenOBj.getDate() - 1);
+  const horaInicioConMargenString = horaInicioConMargenOBj.toISOString();
 
   const responseTodas = await fetch(
-    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicio}&taskType=3401&transfer=0&isFilter=true&customerId=593&communitiesIds[]=787&endDate=${horaFinalConMargenString}&byCreation=`,
+    `https://api-v2.pasalo.pro/api/v2/community-tasks/pins?startDate=${horaInicioConMargenString}&taskType=3401&transfer=0&isFilter=true&customerId=593&communitiesIds[]=787&endDate=${horaFinal}&byCreation=`,
     {
       headers: {
         Accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzI1NTQ1MjY2LCJleHAiOjE3NDEwOTcyNjZ9.3RCwLGdlwM2Qi5oZc67yz-zh_gAI4mcatFQrd8-GTgc",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcwNSwiaWF0IjoxNzA5OTA4NjY1LCJleHAiOjE3MjU0NjA2NjV9.I3VHi5X32IC2n9gt4yeBki97ZJJ3wYcN8K4ychl5NAw",
       },
     }
   );
 
   const todosLosEventos = await responseTodas.json();
+  console.log(todosLosEventos);
 
   const fechaInicialObj = new Date(horaInicio);
   const fechaFinalObj = new Date(horaFinal);
-  const arrayEventos = todosLosEventos.data.tasks.filter((evento) => {
-    const fechaActual = new Date(evento.createdAt);
-    return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
-  });
+  const arrayEventos = arrayEventosData.map((eventoData) =>
+    eventoData.data.tasks.filter((evento) => {
+      const fechaActual = new Date(evento.createdAt);
+      return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
+    })
+  );
 
-  const eventosConZona = agregarFuenteYZona(arrayEventos);
-
-  console.log(eventosConZona);
-
-  return eventosConZona;
+  return arrayEventos;
 };
 
 export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
@@ -122,7 +66,6 @@ export const obtenerTodoPorZona = async (horaInicio, horaFinal) => {
       return fechaActual >= fechaInicialObj && fechaActual <= fechaFinalObj;
     })
   );
-  console.log(arrayEventos);
 
   return arrayEventos;
 };
