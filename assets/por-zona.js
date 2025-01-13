@@ -148,11 +148,10 @@ export const pintarEventosPorZona = (eventosPorZona) => {
 
     const titleCard = document.createElement("div");
     titleCard.classList.add("badge", "bg-dark", "w-100", "py-2");
-    titleCard.innerHTML = `${arrayNombreZonas[i]} - FALTAS: ${eventosZona.length}`;
+
     if (eventosZona.length == 0) {
       return;
     }
-    cardBody.appendChild(titleCard);
 
     const tableZone = document.createElement("table");
     tableZone.classList.add("table", "table-hover", "table-patients");
@@ -177,7 +176,13 @@ export const pintarEventosPorZona = (eventosPorZona) => {
   </thead>`;
     const tbody = document.createElement("tbody");
     tbody.setAttribute("id", "tbody-events");
+    const registroDeEventos = new Map();
     eventosZona.forEach((task, j) => {
+      if (registroDeEventos.get(task.id)) {
+        return;
+      }
+      registroDeEventos.set(task.id, true);
+
       const tr = document.createElement("tr");
       tr.classList.add("table-secondary");
       tr.classList.add("patient-row");
@@ -221,6 +226,8 @@ export const pintarEventosPorZona = (eventosPorZona) => {
       });
     });
     tableZone.appendChild(tbody);
+    titleCard.innerHTML = `${arrayNombreZonas[i]} - FALTAS: ${registroDeEventos.size}`;
+    cardBody.appendChild(titleCard);
     cardBody.appendChild(tableZone);
     card.appendChild(cardBody);
     $containerTables.appendChild(card);
