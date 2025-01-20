@@ -175,7 +175,7 @@ export const colonias = {
     "SAN PEDRITO": ["PEDRITO", "SAN PEDRITO"],
     "SANTA ANA": ["SANTA ANA"],
     "SANTA ROSITA": ["SANTA ROSITA"],
-    VIVIBIEN: ["VIVIBIEN"],
+    VIVIBIEN: ["VIVIBIEN", "VIVEBIEN", "vivi bien"],
     "LOURDES 1": ["Lourdes i", "Lourdes 1"],
     "EL ESFUERZO": ["EL ESFUERZO"],
     SARAVIA: ["SARAVIA"],
