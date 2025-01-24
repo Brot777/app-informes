@@ -696,7 +696,7 @@ export const colonias = {
       "PANORÁMICAS",
       "PANORÁMICA",
     ],
-    "PARAISO I": ["PARAISO I", "PARAISO 1"],
+    "PARAISO I": ["PARAISO I", "PARAISO 1", "PARAISO"],
     "PARAISO II": ["PARAISO II", "PARAISO 2"],
     "PASAJE LOS CORRALES KM9.5": [
       "PASAJE LOS CORRALES KM9.5",
