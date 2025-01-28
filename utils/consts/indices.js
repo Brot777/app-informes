@@ -195,7 +195,6 @@ export const colonias = {
     CANDELARIA: ["CANDELARIA"],
     "EL CARMEN": ["EL CARMEN"],
     FRATERNIDAD: ["FRATERNIDAD"],
-    JOCOTALES: ["JOCOTALES"],
     "LA ERMITA": ["LA ERMITA", "ERMITA"],
     "LA ESPERANZA": ["LA ESPERANZA"],
     "LA JOYA": ["LA JOYA", "joyas"],
@@ -235,6 +234,7 @@ export const colonias = {
     "EL MOLINO": ["EL MOLINO"],
     "SANTA ISABEL": ["SANTA ISABEL"],
     "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
+    JOCOTALES: ["JOCOTALES"],
   },
   "ZONA 7": {
     "4 DE FEBRERO": ["4 DE FEBRERO"],
@@ -873,6 +873,7 @@ export const colonias = {
     "EL MOLINO": ["EL MOLINO"],
     "SANTA ISABEL": ["SANTA ISABEL"],
     "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
+    JOCOTALES: ["JOCOTALES"],
   },
   "ZONA 2 MX": {
     "EL TESORO": ["TESORO"],
