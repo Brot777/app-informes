@@ -330,7 +330,7 @@ export const colonias = {
     RANCHERIA: ["RANCHERIA"],
     "NIÑO DORMIDO": ["NIÑO DORMIDO"],
     "LAS MARGARITAS": ["MARGARITAS"],
-    "OTTEN PRADO": ["Otten Prado"],
+    "OTTEN PRADO": ["Otten Prado", "OTTHEM PRADO"],
   },
   "ZONA 8": {
     "CANTON GUARDA VIEJO": ["CANTON GUARDA VIEJO", "GUARDA VIEJO"],
