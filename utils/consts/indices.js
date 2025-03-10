@@ -224,7 +224,6 @@ export const colonias = {
     "EL CARMEN": ["EL CARMEN"],
     FRATERNIDAD: ["FRATERNIDAD"],
     "LA ERMITA": ["LA ERMITA", "ERMITA"],
-    "LA ESPERANZA": ["LA ESPERANZA"],
     "LA JOYA": ["LA JOYA", "joyas"],
     "LA PARROQUIA": ["LA PARROQUIA", "PARROQUIA"],
     "LA REYNITA": ["LA REYNITA", "la Reinita"],
@@ -264,6 +263,7 @@ export const colonias = {
     "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
     JOCOTALES: ["JOCOTALES"],
     GOBERNACION: ["GOBERNACION"],
+    "LA ESPERANZA": ["LA ESPERANZA"],
   },
   "ZONA 7": {
     "4 DE FEBRERO": ["4 DE FEBRERO"],
@@ -906,6 +906,7 @@ export const colonias = {
     "FINCA SAN RAFAEL": ["FINCA SAN RAFAEL", "SAN RAFAEL"],
     JOCOTALES: ["JOCOTALES"],
     GOBERNACION: ["GOBERNACION"],
+    "LA ESPERANZA": ["LA ESPERANZA"],
   },
   "ZONA 2 MX": {
     "EL TESORO": ["TESORO"],

@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       "FINCA SAN RAFAEL",
       "JOCOTALES",
       "GOBERNACION",
+      "LA ESPERANZA",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
@@ -334,6 +335,7 @@ horaInicioPorZona.addEventListener("change", async (e) => {
       "FINCA SAN RAFAEL",
       "JOCOTALES",
       "GOBERNACION",
+      "LA ESPERANZA",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
@@ -442,6 +444,7 @@ horaFinalPorZona.addEventListener("change", async (e) => {
       "FINCA SAN RAFAEL",
       "JOCOTALES",
       "GOBERNACION",
+      "LA ESPERANZA",
     ].includes(
       encontrarColoniaEnDescripcion(colonias["ZONA 6"], evento.description)
     )
